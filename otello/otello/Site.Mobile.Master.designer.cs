@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Othello {
+namespace otello {
     
     
     public partial class Site_Mobile {

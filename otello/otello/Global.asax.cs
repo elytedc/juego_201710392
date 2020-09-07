@@ -7,7 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace Othello
+namespace otello
 {
     public class Global : HttpApplication
     {

@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.FriendlyUrls.Resolvers;
 
-namespace Othello
+namespace otello
 {
     public partial class ViewSwitcher : System.Web.UI.UserControl
     {
