@@ -53,6 +53,8 @@
             <br />
             <br />
             <br />
+            <asp:Button ID="Button1" runat="server" Height="44px" OnClick="Button1_Click" Text="REGISTRAR" Width="321px" />
+            <br />
             <br />
             <br />
         </div>

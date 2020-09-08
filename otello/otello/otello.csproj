@@ -172,6 +172,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="conexion.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,6 +212,7 @@
     <Compile Include="registrar.aspx.designer.cs">
       <DependentUpon>registrar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sincronizar.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

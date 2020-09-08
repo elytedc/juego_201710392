@@ -29,8 +29,8 @@
             <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 48px"></asp:TextBox>
         </p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" Text="INICIAR" Width="212px" />
-        <asp:Button ID="Button2" runat="server" Text="REGISTRARCE" Width="174px" />
+        <asp:Button ID="Button1" runat="server" Text="INICIAR" Width="212px" OnClick="Button1_Click" />
+        <asp:Button ID="Button2" runat="server" Text="REGISTRARCE" Width="174px" OnClick="Button2_Click" />
     </form>
 </body>
 </html>
