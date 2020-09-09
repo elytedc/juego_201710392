@@ -31,6 +31,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button1" runat="server" Text="INICIAR" Width="212px" OnClick="Button1_Click" />
         <asp:Button ID="Button2" runat="server" Text="REGISTRARCE" Width="174px" OnClick="Button2_Click" />
+        <br />
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Data/ta2.jpg" />
     </form>
 </body>
 </html>
