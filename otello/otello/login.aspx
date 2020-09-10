@@ -6,35 +6,50 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            color: #FFFFFF;
+            background-color: #9900CC;
+        }
+        .auto-style2 {
+            background-color: #9900CC;
+        }
+        .auto-style3 {
+            background-color: #FFFFFF;
+        }
+    </style>
 </head>
 <body style="height: 196px">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="auto-style2">
         <div style="margin-left: 240px">
-            <p style="margin-left: 120px">
+            <p style="margin-left: 120px" class="auto-style1">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Othello</p>
-            <p style="margin-left: 120px">
+            <p style="margin-left: 120px" class="auto-style1">
                 INICIA SECION
             </p>
-            <p style="margin-left: 120px">
+            <p style="margin-left: 120px" class="auto-style1">
                 &nbsp;</p>
         </div>
         <p style="margin-left: 120px">
-            <asp:Label ID="Label1" runat="server" Text="USUARIO:"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Text="USUARIO:" CssClass="auto-style1"></asp:Label>
+            <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
             <asp:TextBox ID="TextBox1" runat="server" style="margin-left: 46px"></asp:TextBox>
         </p>
         <p style="margin-left: 120px">
-            <asp:Label ID="Label2" runat="server" Text="CONTRASEÑA"></asp:Label>
-            :
+            <asp:Label ID="Label2" runat="server" Text="CONTRASEÑA" CssClass="auto-style1"></asp:Label>
+            <span class="auto-style1">:
+            </span>
             <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 48px"></asp:TextBox>
         </p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" Text="INICIAR" Width="212px" OnClick="Button1_Click" />
-        <asp:Button ID="Button2" runat="server" Text="REGISTRARCE" Width="174px" OnClick="Button2_Click" />
-        <br />
-    <p>
+        <span class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <asp:Button ID="Button1" runat="server" Text="INICIAR" Width="212px" OnClick="Button1_Click" CssClass="auto-style3" />
+        <asp:Button ID="Button2" runat="server" Text="REGISTRARCE" Width="174px" OnClick="Button2_Click" CssClass="auto-style3" />
+        <br class="auto-style1" />
+    <p class="auto-style1">
         &nbsp;</p>
-    <p>
+    <p class="auto-style1">
         &nbsp;</p>
     </form>
     </body>

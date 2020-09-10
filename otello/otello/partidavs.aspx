@@ -35,6 +35,7 @@
             height: 35px;
             left: 189px;
             right: 819px;
+            background-color: #00CC00;
         }
         .auto-style4 {
             border: 2px solid #ffffff;
@@ -50,6 +51,7 @@
             height: 32px;
             left: 315px;
             right: 693px;
+            background-color: #00CC00;
         }
         
         
@@ -71,6 +73,7 @@
             left: 255px;
             right: 753px;
             bottom: 92px;
+            background-color: #00CC00;
         }
 
         
@@ -90,6 +93,7 @@
             height: 35px;
             left: 255px;
             right: 753px;
+            background-color: #00CC00;
         }
         .auto-style45 {
             border: 2px solid #ffffff;
@@ -105,6 +109,7 @@
             height: 35px;
             left: 317px;
             right: 691px;
+            background-color: #00CC00;
         }
         .auto-style25 {
             border: 2px solid #ffffff;
@@ -120,6 +125,7 @@
             height: 35px;
             left: 255px;
             right: 753px;
+            background-color: #00CC00;
         }
         .auto-style10 {
             border: 2px solid #ffffff;
@@ -135,6 +141,7 @@
             height: 35px;
             left: 384px;
             right: 624px;
+            background-color: #00CC00;
         }
         .auto-style14 {
             border: 2px solid #ffffff;
@@ -150,6 +157,7 @@
             height: 32px;
             left: 253px;
             right: 755px;
+            background-color: #00CC00;
         }
         .auto-style46 {
             border: 2px solid #ffffff;
@@ -165,6 +173,7 @@
             height: 35px;
             left: 385px;
             right: 623px;
+            background-color: #00CC00;
         }
         .auto-style15 {
             border: 2px solid #ffffff;
@@ -180,6 +189,7 @@
             height: 35px;
             left: 511px;
             right: 497px;
+            background-color: #00CC00;
         }
         .auto-style49 {
             border: 2px solid #ffffff;
@@ -194,7 +204,7 @@
             width: 35px;
             height: 32px;
             left: 61px;
-            right: 947px;
+            background-color: #00CC00;
         }
         .auto-style8 {
             border: 2px solid #ffffff;
@@ -210,6 +220,7 @@
             height: 35px;
             left: 509px;
             right: 499px;
+            background-color: #00CC00;
         }
         .auto-style6 {
             border: 2px solid #ffffff;
@@ -225,6 +236,7 @@
             height: 35px;
             left: 447px;
             right: 561px;
+            background-color: #00CC00;
         }
         .auto-style7 {
             border: 2px solid #ffffff;
@@ -240,6 +252,7 @@
             height: 35px;
             left: 509px;
             right: 499px;
+            background-color: #00CC00;
         }
         .auto-style5 {
             border: 2px solid #ffffff;
@@ -254,7 +267,8 @@
             width: 35px;
             height: 32px;
             left: 449px;
-            }
+            background-color: #00CC00;
+        }
         .auto-style16 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -269,6 +283,7 @@
             height: 35px;
             left: 447px;
             right: 561px;
+            background-color: #00CC00;
         }
         .auto-style12 {
             border: 2px solid #ffffff;
@@ -284,6 +299,7 @@
             height: 35px;
             left: 318px;
             right: 690px;
+            background-color: #00CC00;
         }
         .auto-style26 {
             border: 2px solid #ffffff;
@@ -300,6 +316,7 @@
             left: 189px;
             right: 819px;
             bottom: 188px;
+            background-color: #00CC00;
         }
         .auto-style19 {
             border: 2px solid #ffffff;
@@ -315,6 +332,7 @@
             height: 32px;
             left: 126px;
             right: 882px;
+            background-color: #00CC00;
         }
         .auto-style11 {
             border: 2px solid #ffffff;
@@ -330,6 +348,7 @@
             height: 32px;
             left: 317px;
             right: 691px;
+            background-color: #00CC00;
         }
         .auto-style27 {
             border: 2px solid #ffffff;
@@ -345,6 +364,7 @@
             height: 32px;
             left: 126px;
             right: 882px;
+            background-color: #00CC00;
         }
         .auto-style22 {
             border: 2px solid #ffffff;
@@ -360,6 +380,7 @@
             height: 32px;
             left: 63px;
             right: 945px;
+            background-color: #00CC00;
         }
         .auto-style13 {
             border: 2px solid #ffffff;
@@ -375,6 +396,7 @@
             height: 35px;
             left: 255px;
             right: 753px;
+            background-color: #00CC00;
         }
         .auto-style9 {
             border: 2px solid #ffffff;
@@ -390,6 +412,7 @@
             height: 35px;
             left: 384px;
             right: 624px;
+            background-color: #00CC00;
         }
         .auto-style21 {
             border: 2px solid #ffffff;
@@ -405,6 +428,7 @@
             height: 32px;
             left: 61px;
             right: 947px;
+            background-color: #00CC00;
         }
         .auto-style40 {
             border: 2px solid #ffffff;
@@ -420,6 +444,7 @@
             height: 35px;
             left: 190px;
             right: 818px;
+            background-color: #00CC00;
         }
         .auto-style24 {
             border: 2px solid #ffffff;
@@ -435,6 +460,7 @@
             height: 32px;
             left: 316px;
             right: 692px;
+            background-color: #00CC00;
         }
         .auto-style39 {
             border: 2px solid #ffffff;
@@ -451,6 +477,7 @@
             left: 126px;
             right: 882px;
             bottom: 27px;
+            background-color: #00CC00;
         }
         .auto-style23 {
             border: 2px solid #ffffff;
@@ -466,6 +493,7 @@
             height: 35px;
             left: 383px;
             right: 625px;
+            background-color: #00CC00;
         }
         .auto-style31 {
             border: 2px solid #ffffff;
@@ -481,6 +509,7 @@
             height: 35px;
             left: 512px;
             right: 496px;
+            background-color: #00CC00;
         }
         .auto-style33 {
             border: 2px solid #ffffff;
@@ -496,6 +525,7 @@
             height: 35px;
             left: 510px;
             right: 498px;
+            background-color: #00CC00;
         }
         .auto-style34 {
             border: 2px solid #ffffff;
@@ -511,6 +541,7 @@
             height: 35px;
             left: 447px;
             bottom: 228px;
+            background-color: #00CC00;
         }
         .auto-style63 {
             border: 2px solid #ffffff;
@@ -520,13 +551,14 @@
             font-weight: bold;
             padding: 5px 15px;
             position: absolute;
-            top: 190px;
+            top: 185px;
             margin-left: 10px;
             width: 35px;
             height: 35px;
-            left: 383px;
-            right: 625px;
-            bottom: 251px;
+            left: 384px;
+            right: 881px;
+            bottom: 338px;
+            background-color: #00CC00;
         }
         .auto-style32 {
             border: 2px solid #ffffff;
@@ -542,6 +574,7 @@
             height: 35px;
             left: 384px;
             right: 624px;
+            background-color: #00CC00;
         }
         .auto-style28 {
             border: 2px solid #ffffff;
@@ -558,6 +591,7 @@
             left: 60px;
             right: 948px;
             bottom: 158px;
+            background-color: #00CC00;
         }
         .auto-style43 {
             border: 2px solid #ffffff;
@@ -573,6 +607,7 @@
             height: 35px;
             left: 190px;
             right: 818px;
+            background-color: #00CC00;
         }
         .auto-style38 {
             border: 2px solid #ffffff;
@@ -588,6 +623,7 @@
             height: 32px;
             left: 61px;
             right: 947px;
+            background-color: #00CC00;
         }
         .auto-style17 {
             border: 2px solid #ffffff;
@@ -603,6 +639,7 @@
             height: 35px;
             left: 190px;
             right: 818px;
+            background-color: #00CC00;
         }
         .auto-style18 {
             border: 2px solid #ffffff;
@@ -618,6 +655,7 @@
             height: 30px;
             left: 509px;
             right: 499px;
+            background-color: #00CC00;
         }
         .auto-style44 {
             border: 2px solid #ffffff;
@@ -633,6 +671,7 @@
             height: 35px;
             left: 253px;
             right: 755px;
+            background-color: #00CC00;
         }
         
         
@@ -652,6 +691,7 @@
             height: 35px;
             left: 316px;
             right: 692px;
+            background-color: #00CC00;
         }
         .auto-style29 {
             border: 2px solid #ffffff;
@@ -667,6 +707,7 @@
             height: 35px;
             left: 385px;
             right: 623px;
+            background-color: #00CC00;
         }
         .auto-style35 {
             border: 2px solid #ffffff;
@@ -682,6 +723,7 @@
             height: 32px;
             left: 61px;
             right: 947px;
+            background-color: #00CC00;
         }
         .auto-style48 {
             border: 2px solid #ffffff;
@@ -696,7 +738,7 @@
             width: 35px;
             height: 35px;
             left: 448px;
-            right: 560px;
+            background-color: #00CC00;
         }
         .auto-style30 {
             border: 2px solid #ffffff;
@@ -712,6 +754,7 @@
             height: 35px;
             left: 511px;
             right: 497px;
+            background-color: #00CC00;
         }
         .auto-style37 {
             border: 2px solid #ffffff;
@@ -727,6 +770,7 @@
             height: 35px;
             left: 191px;
             right: 817px;
+            background-color: #00CC00;
         }
         .auto-style36 {
             border: 2px solid #ffffff;
@@ -742,6 +786,7 @@
             height: 32px;
             left: 126px;
             right: 882px;
+            background-color: #00CC00;
         }
         .auto-style61 {
             border: 2px solid #ffffff;
@@ -757,6 +802,7 @@
             height: 35px;
             left: 253px;
             right: 755px;
+            background-color: #00CC00;
         }
         .auto-style54 {
             border: 2px solid #ffffff;
@@ -772,6 +818,7 @@
             height: 35px;
             left: 384px;
             right: 624px;
+            background-color: #00CC00;
         }
         .auto-style41 {
             border: 2px solid #ffffff;
@@ -786,7 +833,8 @@
             width: 35px;
             height: 32px;
             left: 61px;
-            }
+            background-color: #00CC00;
+        }
         .auto-style47 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -801,21 +849,7 @@
             height: 35px;
             left: 447px;
             right: 561px;
-        }
-        .auto-style59 {
-            border: 2px solid #ffffff;
-            border-radius: 200px;
-            color: #fff;
-            font-size: 28px;
-            font-weight: bold;
-            padding: 5px 15px;
-            position: absolute;
-            top: 188px;
-            margin-left: 10px;
-            width: 35px;
-            height: 35px;
-            right: 882px;
-            background-color: #009900;
+            background-color: #00CC00;
         }
         .auto-style42 {
             border: 2px solid #ffffff;
@@ -831,6 +865,7 @@
             height: 32px;
             left: 127px;
             right: 881px;
+            background-color: #00CC00;
         }
         .auto-style60 {
             border: 2px solid #ffffff;
@@ -846,6 +881,7 @@
             height: 35px;
             left: 190px;
             right: 818px;
+            background-color: #00CC00;
         }
         .auto-style64 {
             border: 2px solid #ffffff;
@@ -861,6 +897,7 @@
             height: 35px;
             left: 446px;
             right: 562px;
+            background-color: #00CC00;
         }
         .auto-style57 {
             border: 2px solid #ffffff;
@@ -875,7 +912,9 @@
             width: 35px;
             height: 32px;
             left: 59px;
-            }
+            right: 926px;
+            background-color: #00CC00;
+        }
         .auto-style55 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -891,6 +930,7 @@
             left: 446px;
             right: 562px;
             bottom: 110px;
+            background-color: #00CC00;
         }
         .auto-style50 {
             border: 2px solid #ffffff;
@@ -906,6 +946,7 @@
             height: 32px;
             left: 127px;
             right: 881px;
+            background-color: #00CC00;
         }
         .auto-style53 {
             border: 2px solid #ffffff;
@@ -922,6 +963,7 @@
             left: 317px;
             right: 691px;
             bottom: 217px;
+            background-color: #00CC00;
         }
         .auto-style62 {
             border: 2px solid #ffffff;
@@ -937,6 +979,7 @@
             height: 35px;
             left: 318px;
             right: 690px;
+            background-color: #00CC00;
         }
         .auto-style51 {
             border: 2px solid #ffffff;
@@ -951,7 +994,8 @@
             width: 35px;
             height: 35px;
             left: 190px;
-            }
+            background-color: #00CC00;
+        }
         .auto-style52 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -967,6 +1011,7 @@
             left: 253px;
             right: 755px;
             bottom: 186px;
+            background-color: #00CC00;
         }
         .auto-style56 {
             border: 2px solid #ffffff;
@@ -982,6 +1027,7 @@
             height: 35px;
             left: 511px;
             right: 497px;
+            background-color: #00CC00;
         }
         .auto-style65 {
             border: 2px solid #ffffff;
@@ -996,7 +1042,7 @@
             width: 35px;
             height: 35px;
             left: 129px;
-            right: 879px;
+            background-color: #00CC00;
         }
 
         
@@ -1012,12 +1058,12 @@
             font-weight: bold;
             padding: 5px 15px;
             position: absolute;
-            top: 622px;
+            top: 264px;
             margin-left: 10px;
             width: 156px;
             height: 44px;
-            left: 308px;
-            right: 579px;
+            left: 726px;
+            right: 151px;
         }
         .auto-style69 {
             border: 2px solid #ffffff;
@@ -1026,11 +1072,11 @@
             font-weight: bold;
             padding: 5px 15px;
             position: absolute;
-            top: 623px;
+            top: 331px;
             margin-left: 10px;
             width: 156px;
             height: 44px;
-            left: 475px;
+            right: 148px;
         }
         .auto-style70 {
             border: 2px solid #ffffff;
@@ -1039,17 +1085,37 @@
             font-weight: bold;
             padding: 5px 15px;
             position: absolute;
-            top: 625px;
+            top: 401px;
             margin-left: 10px;
             width: 156px;
             height: 44px;
-            left: 637px;
+            left: 733px;
         }
 
         
 
 
-    </style>
+        .auto-style71 {
+            border: 2px solid #ffffff;
+            border-radius: 200px;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 5px 15px;
+            position: absolute;
+            top: 187px;
+            margin-left: 10px;
+            width: 35px;
+            height: 35px;
+            left: 128px;
+            right: 1137px;
+            background-color: #00CC00;
+        }
+
+        
+
+
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -1065,75 +1131,80 @@
                 &nbsp;</p>
             <p>
                 <asp:Image ID="Image1" runat="server" Height="425px" ImageUrl="~/ima/fonfo.jpg" Width="599px" />
-                <asp:Button ID="c08" runat="server" CssClass="auto-style20" Text="" />
-                <asp:Button ID="e05" runat="server" CssClass="auto-style4" Text="" />
-                <asp:Button ID="d04" runat="server" CssClass="auto-style1" Text="" />
-                <asp:Button ID="d05" runat="server" CssClass="auto-style3" Text="" />
-                <asp:Button ID="e03" runat="server" CssClass="auto-style45" Text="" />
-                <asp:Button ID="d06" runat="server" CssClass="auto-style25" Text="" />
-                <asp:Button ID="f08" runat="server" CssClass="auto-style10" Text="" />
-                <asp:Button ID="d08" runat="server" CssClass="auto-style14" Text="" />
-                <asp:Button ID="f03" runat="server" CssClass="auto-style46" Text="" />
-                <asp:Button ID="h05" runat="server" CssClass="auto-style15" Text="" />
-                <asp:Button ID="a02" runat="server" CssClass="auto-style49" Text="" />
-                <asp:Button ID="g07" runat="server" CssClass="auto-style6" Text="" />
-                <asp:Button ID="h06" runat="server" CssClass="auto-style7" Text="" />
-                <asp:Button ID="g08" runat="server" CssClass="auto-style5" Text="" />
-                <asp:Button ID="g06" runat="server" CssClass="auto-style16" Text="" />
-                <asp:Button ID="e08" runat="server" CssClass="auto-style12" Text="" />
-                <asp:Button ID="c06" runat="server" CssClass="auto-style26" Text="" />
-                <asp:Button ID="b08" runat="server" CssClass="auto-style19" Text="" />
-                <asp:Button ID="e07" runat="server" CssClass="auto-style11" Text="" />
-                <asp:Button ID="b07" runat="server" CssClass="auto-style27" Text="" />
-                <asp:Button ID="a08" runat="server" CssClass="auto-style22" Text="" />
-                <asp:Button ID="d07" runat="server" CssClass="auto-style13" Text="" />
-                <asp:Button ID="f07" runat="server" CssClass="auto-style9" Text="" />
-                <asp:Button ID="a07" runat="server" CssClass="auto-style21" Text="" />
-                <asp:Button ID="c05" runat="server" CssClass="auto-style40" Text="" />
-                <asp:Button ID="e06" runat="server" CssClass="auto-style24" Text="" />
-                <asp:Button ID="b06" runat="server" CssClass="auto-style39" Text="" />
-                <asp:Button ID="f06" runat="server" CssClass="auto-style23" Text="" />
-                <asp:Button ID="h02" runat="server" CssClass="auto-style31" Text="" />
-                <asp:Button ID="h04" runat="server" CssClass="auto-style33" Text="" />
-                <asp:Button ID="g05" runat="server" CssClass="auto-style34" Text="" />
-                <asp:Button ID="f01" runat="server" CssClass="auto-style63" Text="" />
-                <asp:Button ID="f05" runat="server" CssClass="auto-style32" Text="" />
-                <asp:Button ID="a06" runat="server" CssClass="auto-style28" Text="" />
-                <asp:Button ID="c03" runat="server" CssClass="auto-style43" Text="" />
-                <asp:Button ID="a05" runat="server" CssClass="auto-style38" Text="" />
-                <asp:Button ID="c07" runat="server" CssClass="auto-style17" Text="" />
-                <asp:Button ID="h07" runat="server" CssClass="auto-style18" Text="" />
-                <asp:Button ID="d03" runat="server" CssClass="auto-style44" Text="" />
-                <asp:Button ID="e04" runat="server" CssClass="auto-style2" Text="" />
-                <asp:Button ID="f04" runat="server" CssClass="auto-style29" Text="" />
-                <asp:Button ID="a04" runat="server" CssClass="auto-style35" Text="" />
-                <asp:Button ID="g04" runat="server" CssClass="auto-style48" Text="" />
-                <asp:Button ID="h03" runat="server" CssClass="auto-style30" Text="" />
-                <asp:Button ID="c04" runat="server" CssClass="auto-style37" Text="" />
-                <asp:Button ID="b05" runat="server" CssClass="auto-style36" Text="" />
-                <asp:Button ID="d01" runat="server" CssClass="auto-style61" Text="" />
-                <asp:Button ID="f02" runat="server" CssClass="auto-style54" Text="" />
-                <asp:Button ID="a03" runat="server" CssClass="auto-style41" Text="" />
-                <asp:Button ID="g03" runat="server" CssClass="auto-style47" Text="" />
-                <asp:Button ID="b1" runat="server" CssClass="auto-style59" Text="" OnClick="b1_Click" BorderColor="#009900" />
-                <asp:Button ID="b04" runat="server" CssClass="auto-style42" Text="" />
-                <asp:Button ID="c1" runat="server" CssClass="auto-style60" Text="" />
-                <asp:Button ID="g01" runat="server" CssClass="auto-style64" Text="" />
-                <asp:Button ID="a01" runat="server" CssClass="auto-style57" Text="" OnClick="a01_Click" />
-                <asp:Button ID="g02" runat="server" CssClass="auto-style55" Text="" />
-                <asp:Button ID="b03" runat="server" CssClass="auto-style50" Text="" />
-                <asp:Button ID="e02" runat="server" CssClass="auto-style53" Text="" />
-                <asp:Button ID="e01" runat="server" CssClass="auto-style62" Text="" />
-                <asp:Button ID="c02" runat="server" CssClass="auto-style51" Text="" />
-                <asp:Button ID="d02" runat="server" CssClass="auto-style52" Text="" />
-                <asp:Button ID="h01" runat="server" CssClass="auto-style56" Text="" />
-                <asp:Button ID="b02" runat="server" CssClass="auto-style65" Text="" />
-                <asp:Button ID="h08" runat="server" CssClass="auto-style8" Text="" />
+                <asp:Button ID="c08" runat="server" CssClass="auto-style20" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="e05" runat="server" CssClass="auto-style4" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="d04" runat="server" CssClass="auto-style1" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="d05" runat="server" CssClass="auto-style3" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="e03" runat="server" CssClass="auto-style45" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="d06" runat="server" CssClass="auto-style25" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="f08" runat="server" CssClass="auto-style10" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="d08" runat="server" CssClass="auto-style14" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="f03" runat="server" CssClass="auto-style46" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="h05" runat="server" CssClass="auto-style15" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="a02" runat="server" CssClass="auto-style49" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="g07" runat="server" CssClass="auto-style6" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="h06" runat="server" CssClass="auto-style7" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="g08" runat="server" CssClass="auto-style5" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="g06" runat="server" CssClass="auto-style16" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="e08" runat="server" CssClass="auto-style12" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="c06" runat="server" CssClass="auto-style26" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="b08" runat="server" CssClass="auto-style19" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="e07" runat="server" CssClass="auto-style11" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="b07" runat="server" CssClass="auto-style27" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="a08" runat="server" CssClass="auto-style22" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="d07" runat="server" CssClass="auto-style13" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="f07" runat="server" CssClass="auto-style9" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="a07" runat="server" CssClass="auto-style21" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="c05" runat="server" CssClass="auto-style40" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="e06" runat="server" CssClass="auto-style24" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="b06" runat="server" CssClass="auto-style39" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="f06" runat="server" CssClass="auto-style23" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="h02" runat="server" CssClass="auto-style31" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="h04" runat="server" CssClass="auto-style33" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="g05" runat="server" CssClass="auto-style34" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="f01" runat="server" CssClass="auto-style63" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="f05" runat="server" CssClass="auto-style32" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="a06" runat="server" CssClass="auto-style28" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="c03" runat="server" CssClass="auto-style43" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="a05" runat="server" CssClass="auto-style38" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="c07" runat="server" CssClass="auto-style17" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="h07" runat="server" CssClass="auto-style18" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="d03" runat="server" CssClass="auto-style44" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="e04" runat="server" CssClass="auto-style2" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="f04" runat="server" CssClass="auto-style29" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="a04" runat="server" CssClass="auto-style35" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="g04" runat="server" CssClass="auto-style48" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="h03" runat="server" CssClass="auto-style30" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="c04" runat="server" CssClass="auto-style37" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="b05" runat="server" CssClass="auto-style36" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="d01" runat="server" CssClass="auto-style61" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="f02" runat="server" CssClass="auto-style54" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="a03" runat="server" CssClass="auto-style41" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="g03" runat="server" CssClass="auto-style47" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="b04" runat="server" CssClass="auto-style42" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="c1" runat="server" CssClass="auto-style60" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="g01" runat="server" CssClass="auto-style64" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="a01" runat="server" CssClass="auto-style57" Text="" OnClick="a01_Click" BorderColor="#00CC00" />
+                <asp:Button ID="g02" runat="server" CssClass="auto-style55" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="b03" runat="server" CssClass="auto-style50" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="e02" runat="server" CssClass="auto-style53" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="e01" runat="server" CssClass="auto-style62" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="c02" runat="server" CssClass="auto-style51" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="d02" runat="server" CssClass="auto-style52" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="h01" runat="server" CssClass="auto-style56" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="b02" runat="server" CssClass="auto-style65" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="h08" runat="server" CssClass="auto-style8" Text="" BorderColor="#00CC00" />
+                <asp:Button ID="b01" runat="server" CssClass="auto-style71" Text="" OnClick="b01_Click" BorderColor="#00CC00" />
             </p>
             <p>
-                <asp:Button ID="a102" runat="server" CssClass="auto-style68" Text="CARGAR XML" />
-                <asp:Button ID="a103" runat="server" CssClass="auto-style69" Text="CARGAR XML" />
-            </p>
+                <asp:Button ID="a102" runat="server" CssClass="auto-style68" Text="CARGAR XML" OnClick="a102_Click" />
+                <asp:Button ID="a103" runat="server" CssClass="auto-style69" Text="GUARDAR XML" OnClick="a103_Click" />
+            </p>&nbsp;<asp:FileUpload ID="lectura" runat="server" Width="679px"  Height="23px"  />
+                
+            <br />
+            <br />
+            <br />
+                
             <br />
             <br />
             <br />
@@ -1142,7 +1213,7 @@
             <br />
             <br />
             <br />
-                <asp:Button ID="a15" runat="server" CssClass="auto-style70" Text="CARGAR XML" />
+                <asp:Button ID="a15" runat="server" CssClass="auto-style70" Text="INICIAR" />
         </div>
     </form>
 </body>
