@@ -8,7 +8,9 @@ using System.Web.UI.WebControls;
 using System.Windows;
 using Microsoft;
 using System.Xml;
-using System.IO;
+using System.Xml.Linq;
+
+
 
 
 
@@ -464,6 +466,876 @@ namespace otello
         {
             if (colorturno == "blanco") { d08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
             else { d08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void e01_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { e01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { e01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+
+        }
+
+        protected void e02_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { e02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { e02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void e03_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { e03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { e03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void e04_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { e04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { e04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void e05_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { e05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { e05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void e06_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { e06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { e06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void e07_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { e07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { e07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void e08_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { e08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { e08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void f01_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { f01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { f01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void f02_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { f02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { f02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void f03_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { f03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { f03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void f04_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { f04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { f04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void f05_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { f05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { f05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void f06_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { f06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { f06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void f07_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { f07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { f07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void f08_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { f08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { f08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void g01_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { g01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { g01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void g02_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { g02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { g02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void g03_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { g03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { g03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void g04_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { g04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { g04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void g05_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { g05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { g05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void g06_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { g06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { g06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void g07_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { g07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { g07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void g08_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { g08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { g08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void h01_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { h01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { h01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void h02_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { h02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { h02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void h03_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { h03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { h03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void h04_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { h04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { h04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void h05_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { h05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { h05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void h06_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { h06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { h06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void h07_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { h07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { h07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void h08_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { h08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { h08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+
+
+        protected void a102_Click(object sender, EventArgs e)
+        {
+            XDocument document = new XDocument(new XDeclaration("1.0", "utf-8", null));
+            XElement cabeza = new XElement("tablero");
+            document.Add(cabeza);
+ if(a01.BackColor== System.Drawing.Color.White) {
+ XElement ficha = new XElement("ficha");  ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
+ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha); }
+            if (a02.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (a03.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (a04.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (a05.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (a06.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (a07.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (a08.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (b01.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (b02.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (b03.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (b04.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (b05.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (b06.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (b07.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (b08.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (c1.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (c02.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (c03.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (c04.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (c05.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (c06.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (c07.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (c08.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (d01.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (d02.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (d03.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (d04.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (d05.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (d06.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (d07.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (d08.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (e01.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (e02.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (e03.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (e04.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (e05.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (e06.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (e07.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (e08.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+
+            if (f01.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (f02.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (f03.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (f04.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (f05.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (f06.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (f07.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (f08.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (g01.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (g02.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (g03.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (g04.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (g05.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (g06.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (g07.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (g08.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+
+            if (h01.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (h02.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (h03.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (h04.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (h05.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (h06.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (h07.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (h08.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+
+            if (a01.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (a02.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (a03.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (a04.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (a05.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (a06.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (a07.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (a08.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (b01.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (b02.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (b03.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (b04.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (b05.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (b06.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (b07.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (b08.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "B"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (c1.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (c02.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (c03.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (c04.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (c05.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (c06.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (c07.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (c08.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "C"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (d01.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (d02.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (d03.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (d04.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (d05.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (d06.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (d07.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (d08.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "D"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (e01.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (e02.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (e03.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (e04.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (e05.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (e06.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (e07.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (e08.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "E"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+
+            if (f01.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (f02.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (f03.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (f04.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (f05.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (f06.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (f07.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (f08.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "F"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+            if (g01.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (g02.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (g03.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (g04.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (g05.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (g06.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (g07.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (g08.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "G"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+
+            if (h01.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
+            if (h02.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "2")); cabeza.Add(ficha);
+            }
+            if (h03.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "3")); cabeza.Add(ficha);
+            }
+            if (h04.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "4")); cabeza.Add(ficha);
+            }
+            if (h05.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "5")); cabeza.Add(ficha);
+            }
+            if (h06.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "6")); cabeza.Add(ficha);
+            }
+            if (h07.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "7")); cabeza.Add(ficha);
+            }
+            if (h08.BackColor == System.Drawing.Color.Black)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "negro")); ficha.Add(new XElement("columna", "H"));
+                ficha.Add(new XElement("fila", "8")); cabeza.Add(ficha);
+            }
+
+
+
+            document.Save(@"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\p1.xml");
+
+
+
+
+
+
         }
     }
 }
