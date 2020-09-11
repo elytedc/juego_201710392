@@ -54,5 +54,36 @@ namespace otello
             }
         }
 
+        public bool validar(string usuario)
+        {
+            conexion cn = new conexion();
+            try
+            {
+                string sql = "SELECT * FROM base_usuarios WHERE usuario = '" + usuario + "'";
+                SqlCommand cmd = new SqlCommand(sql, cn.getTomos());
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                return dt.Rows.Count == 1;
+
+
+
+            }
+
+            catch (Exception)
+            {
+                return false;
+
+            }
+        }
+
     }
+
+
+
 }
+
+
+
+

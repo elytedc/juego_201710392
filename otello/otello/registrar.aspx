@@ -18,7 +18,8 @@
             background-color: #FFFFFF;
         }
         .auto-style4 {
-            color: #FFFFFF;
+            background-color: #9900FF;
+            height: 918px;
         }
     </style>
 </head>
@@ -32,45 +33,45 @@
     <form id="form1" runat="server">
         <p class="auto-style2">
             &nbsp;</p>
-        <div class="auto-style2">
+        <div class="auto-style4">
             <asp:Label ID="Label1" runat="server" Text="NOMBRE:" CssClass="auto-style1"></asp:Label>
-&nbsp;<asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style4"></asp:TextBox>
+&nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br class="auto-style1" />
             <br class="auto-style1" />
             <asp:Label ID="Label2" runat="server" Text="APELLIDO" CssClass="auto-style1"></asp:Label>
             <span class="auto-style1">:
             </span>
-            <asp:TextBox ID="TextBox2" runat="server" CssClass="auto-style4"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <br class="auto-style1" />
             <br class="auto-style1" />
             <asp:Label ID="Label3" runat="server" Text="USUARIO" CssClass="auto-style1"></asp:Label>
             <span class="auto-style1">:
             </span>
-            <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style4"></asp:TextBox>
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             <br class="auto-style1" />
             <br class="auto-style1" />
             <asp:Label ID="Label4" runat="server" Text="CONTRASEÑA" CssClass="auto-style1"></asp:Label>
             <span class="auto-style1">:
             </span>
-            <asp:TextBox ID="TextBox4" runat="server" CssClass="auto-style4"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
             <br class="auto-style1" />
             <br class="auto-style1" />
             <asp:Label ID="Label5" runat="server" Text="NACIMIENTO" CssClass="auto-style1"></asp:Label>
             <span class="auto-style1">:&nbsp;
             </span>
-            <asp:TextBox ID="TextBox5" runat="server" style="margin-top: 0px" CssClass="auto-style4"></asp:TextBox>
+            <asp:TextBox ID="TextBox5" runat="server" style="margin-top: 0px"></asp:TextBox>
             <br class="auto-style1" />
             <br class="auto-style1" />
             <asp:Label ID="Label6" runat="server" Text="PAIS" CssClass="auto-style1"></asp:Label>
             <span class="auto-style1">:
             </span>
-            <asp:TextBox ID="TextBox6" runat="server" style="margin-top: 0px" CssClass="auto-style4"></asp:TextBox>
+            <asp:TextBox ID="TextBox6" runat="server" style="margin-top: 0px"></asp:TextBox>
             <br class="auto-style1" />
             <br class="auto-style1" />
             <asp:Label ID="Label7" runat="server" Text="CORREO ELECTRONICO" CssClass="auto-style1"></asp:Label>
             <span class="auto-style1">:&nbsp;
             </span>
-            <asp:TextBox ID="TextBox7" runat="server" style="margin-top: 0px" CssClass="auto-style4"></asp:TextBox>
+            <asp:TextBox ID="TextBox7" runat="server" style="margin-top: 0px"></asp:TextBox>
             <br class="auto-style2" />
             <br class="auto-style2" />
             <br class="auto-style2" />

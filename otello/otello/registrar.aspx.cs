@@ -27,14 +27,26 @@ namespace otello
             pais = TextBox6.Text;
             correo = TextBox7.Text;
 
-            if(p.insertar(nombre,apellido,usuario,contraseña,nacimiento,pais,correo))
+            if (p.validar(usuario))
             {
-                Response.Write("<scrip>window.alert('persona ingresada bien')</script>");
+                Response.Write("<scrip>window.alert('error usuario ya existe')</script>");
+                
             }
             else
             {
-                Response.Write("<scrip>window.alert('error')</script>");
+                if (p.insertar(nombre, apellido, usuario, contraseña, nacimiento, pais, correo))
+                {
+                    Response.Write("<scrip>window.alert('persona ingresada bien')</script>");
+                }
+                else
+                {
+                    Response.Write("<scrip>window.alert('error')</script>");
+                }
             }
+
+
+
+            
 
         }
     }

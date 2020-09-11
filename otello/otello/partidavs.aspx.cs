@@ -9,6 +9,7 @@ using System.Windows;
 using Microsoft;
 using System.Xml;
 using System.Xml.Linq;
+using System.Net;
 
 
 
@@ -25,6 +26,7 @@ namespace otello
         public static string columna = "";
         public static string estado = "falso";
         public static string colorturno = "";
+        public static int con = 1;
 
         public object FlatStyle { get; private set; }
         public object DialogResult { get; private set; }
@@ -37,12 +39,9 @@ namespace otello
                 System.Web.HttpPostedFile file = Request.Files["fUpload"];
                 if (file != null && file.ContentLength > 0)
                 {
-
                     a10();
-
                 }
             }
-
         }
 
        
@@ -663,7 +662,7 @@ namespace otello
 
 
 
-        protected void a102_Click(object sender, EventArgs e)
+        public void guardarxml()
         {
             XDocument document = new XDocument(new XDeclaration("1.0", "utf-8", null));
             XElement cabeza = new XElement("tablero");
@@ -1328,12 +1327,96 @@ ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha); }
             }
 
 
+            XElement color = new XElement("siguienteTiro"); 
+            color.Add(new XElement("color", colorturno)); cabeza.Add(color);
+            document.Save(@"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\partida"+con+".xml");
+            con++;
 
-            document.Save(@"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\p1.xml");
 
 
 
 
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            guardarxml();   
+        }
+
+        protected void B_Click(object sender, EventArgs e)
+        {
+            a01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            a02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            a03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            a04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            a05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            a06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            a07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            a08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+
+            b01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            b02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            b03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            b04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            b05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            b06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            b07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            b08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+        
+            c1.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            c02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            c03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            c04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            c05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            c06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            c07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            c08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+        
+            d01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            d02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            d03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            d04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            d05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            d06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            d07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            d08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+
+            e01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            e02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            e03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            e04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            e05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            e06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            e07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            e08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+
+            f01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            f02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            f03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            f04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            f05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            f06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            f07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            f08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+
+            g01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            g02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            g03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            g04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            g05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            g06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            g07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            g08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+        
+            h01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            h02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            h03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            h04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            h05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            h06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            h07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+            h08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
 
 
         }

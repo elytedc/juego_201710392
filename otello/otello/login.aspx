@@ -17,6 +17,11 @@
         .auto-style3 {
             background-color: #FFFFFF;
         }
+        .auto-style4 {
+            color: #FFFFFF;
+            background-color: #9900CC;
+            height: 680px;
+        }
     </style>
 </head>
 <body style="height: 196px">
@@ -49,7 +54,7 @@
         <br class="auto-style1" />
     <p class="auto-style1">
         &nbsp;</p>
-    <p class="auto-style1">
+    <p class="auto-style4">
         &nbsp;</p>
     </form>
     </body>
