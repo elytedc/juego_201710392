@@ -21,12 +21,25 @@ namespace otello
         public static string colorito = "";
         public static  string fila = "";
         public static string columna = "";
+        public static string estado = "falso";
+        public static string colorturno = "";
+
         public object FlatStyle { get; private set; }
         public object DialogResult { get; private set; }
 
         protected void Page_Load(object sender, EventArgs e)
 
         {
+            if (IsPostBack)
+            {
+                System.Web.HttpPostedFile file = Request.Files["fUpload"];
+                if (file != null && file.ContentLength > 0)
+                {
+
+                    a10();
+
+                }
+            }
 
         }
 
@@ -42,16 +55,28 @@ namespace otello
         }
 
         protected void a01_Click(object sender, EventArgs e)
-        {a01.BackColor = System.Drawing.Color.Red;}
+        { if (colorturno == "blanco") { a01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { a01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }   }
+
+        
+
+        
+        
+
+
+
+
+
 
         protected void b01_Click(object sender, EventArgs e)
         {
-            b01.BackColor = System.Drawing.Color.Black;
+            if (colorturno == "blanco") { b01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { b01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
         }
 
-        protected void a102_Click(object sender, EventArgs e)
+        public void a10()
         {
-            string c = lectura.FileName;
+            string c = fUpload.FileName;
             string cadena= @"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\" + c;
             XmlReader xmlreader = XmlReader.Create(cadena);
             
@@ -59,17 +84,36 @@ namespace otello
             while (xmlreader.Read())
             {
                 if (xmlreader.IsStartElement()) {
-                    switch (xmlreader.Name.ToString())
+                    if (estado == "falso")
                     {
-                        case "color":
-                            colorito =xmlreader.ReadString();
-                            break;
-                        case "fila":
-                            fila = xmlreader.ReadString();
-                            break;
-                        case "columna":
-                            columna = xmlreader.ReadString();
-                            break;
+                        switch (xmlreader.Name.ToString())
+                        {
+                            case "color":
+                                colorito = xmlreader.ReadString();
+                                break;
+                            case "fila":
+                                fila = xmlreader.ReadString();
+                                break;
+                            case "columna":
+                                columna = xmlreader.ReadString();
+                                break;
+                            case "siguienteTiro":
+                                estado = "verdadero";
+                                break;
+
+
+                        }
+                    }
+                    else {
+
+                        switch (xmlreader.Name.ToString())
+                        {
+                            case "color":
+                                colorturno = xmlreader.ReadString();
+                                estado = "falso";
+                                break;
+
+                        }
 
 
                     }
@@ -240,6 +284,186 @@ namespace otello
             
 
 
+        }
+
+        protected void a02_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { a02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { a02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void a03_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { a03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { a03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void a04_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { a04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { a04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void a05_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { a05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { a05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void a06_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { a06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { a06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void a07_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { a07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { a07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void a08_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { a08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { a08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void b02_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { b02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { b02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void b03_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { b03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { b03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void b04_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { b04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { b04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void b05_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { b05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { b05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void b06_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { b06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { b06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void b07_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { b07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { b07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void b08_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { b08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { b08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void c1_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { c1.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { c1.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void c02_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { c02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { c02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void c03_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { c03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { c03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void c04_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { c04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { c04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void c05_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { c05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { c05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void c06_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { c06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { c06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void c07_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { c07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { c07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void c08_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { c08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { c08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void d01_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { d01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { d01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void d02_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { d02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { d02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void d03_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { d03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { d03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void d04_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { d04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { d04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void d05_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { d05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { d05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void d06_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { d06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { d06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void d07_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { d07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { d07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
+
+        protected void d08_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { d08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { d08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
         }
     }
 }
