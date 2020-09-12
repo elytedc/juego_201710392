@@ -1180,7 +1180,9 @@
                 <asp:Button ID="Button1" runat="server" Height="21px" OnClick="Button1_Click" Text="GUARDAR XML" Width="108px" />
 &nbsp; LIMPIAR:
                 <asp:Button ID="B" runat="server" CssClass="auto-style72" Height="20px" Width="44px" OnClick="B_Click" />
-            </p>&nbsp;<br />
+            </p>
+            <p>
+                &nbsp;</p>&nbsp;<br />
             <br />
             <br />
                 

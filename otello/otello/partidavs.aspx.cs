@@ -11,11 +11,6 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Net;
 
-
-
-
-
-
 namespace otello
 
 {
@@ -61,14 +56,6 @@ namespace otello
 
         
 
-        
-        
-
-
-
-
-
-
         protected void b01_Click(object sender, EventArgs e)
         {
             if (colorturno == "blanco") { b01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
@@ -79,38 +66,29 @@ namespace otello
         {
             string c = fUpload.FileName;
             string cadena= @"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\" + c;
-            XmlReader xmlreader = XmlReader.Create(cadena);
+            XmlReader lectura = XmlReader.Create(cadena);
             
 
-            while (xmlreader.Read())
+            while (lectura.Read())
             {
-                if (xmlreader.IsStartElement()) {
+                if (lectura.IsStartElement()) {
                     if (estado == "falso")
                     {
-                        switch (xmlreader.Name.ToString())
+                        switch (lectura.Name.ToString())
                         {
-                            case "color":
-                                colorito = xmlreader.ReadString();
+                            case "color": colorito = lectura.ReadString(); break;
+                            case "fila": fila = lectura.ReadString();  break;
+                            case "columna": columna = lectura.ReadString();  break;
+                            case "siguienteTiro":estado = "verdadero";
                                 break;
-                            case "fila":
-                                fila = xmlreader.ReadString();
-                                break;
-                            case "columna":
-                                columna = xmlreader.ReadString();
-                                break;
-                            case "siguienteTiro":
-                                estado = "verdadero";
-                                break;
-
-
                         }
                     }
                     else {
 
-                        switch (xmlreader.Name.ToString())
+                        switch (lectura.Name.ToString())
                         {
                             case "color":
-                                colorturno = xmlreader.ReadString();
+                                colorturno = lectura.ReadString();
                                 estado = "falso";
                                 break;
 
@@ -119,7 +97,7 @@ namespace otello
 
                     }
 
-                }
+                } 
 
                  if ((colorito == "blanco")) {
                     if ((fila == "1") && (columna == "A")) { a01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = "";}
@@ -280,12 +258,6 @@ namespace otello
 
         }
 
-        protected void a103_Click(object sender, EventArgs e)
-        {
-            
-
-
-        }
 
         protected void a02_Click(object sender, EventArgs e)
         {

@@ -10,44 +10,45 @@ namespace otello
 {
     public class sincronizar
     {
+
+        public SqlConnection getTomos()
+        {
+
+            string ruta = "Data Source=DESKTOP-VLR9CVA;Initial Catalog=usuarios_otello;Integrated Security=True";
+            SqlConnection bas = new SqlConnection(ruta);
+            bas.Open();
+            return bas;}
+
+
         public bool insertar(string nombre, string apellido, string usuario, string contraseña, string fecha1, string pais1, string correo)
         {
-            conexion cn = new conexion();
+            sincronizar bas = new sincronizar();
             try
             {
                 string sql = "Insert into base_usuarios values ('" + nombre + "','" + apellido + "','" + usuario + "','" + contraseña + "','" + fecha1 + "','" + pais1 + "','" + correo + "')";
-                SqlCommand cmd = new SqlCommand(sql, cn.getTomos());
-                int n = cmd.ExecuteNonQuery();
-                return n > 0;
-
-
+                SqlCommand lectura = new SqlCommand(sql, bas.getTomos());
+                int estado = lectura.ExecuteNonQuery();
+                return estado > 0;
             }
-
             catch (Exception)
             {
                 return false;
-
             }
         }
 
 
         public bool buscar(string usuario, string contraseña)
         {
-            conexion cn = new conexion();
+            sincronizar bas = new sincronizar();
             try
             {
                 string sql = "SELECT * FROM base_usuarios WHERE usuario = '" + usuario + "' AND contraseña = '" + contraseña + "'";
-                SqlCommand cmd = new SqlCommand(sql, cn.getTomos());
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-
-                return dt.Rows.Count == 1;
-
-
-
+                SqlCommand lectura = new SqlCommand(sql, bas.getTomos());
+                SqlDataAdapter sda = new SqlDataAdapter(lectura);
+                DataTable tabla = new DataTable();
+                sda.Fill(tabla);
+                return tabla.Rows.Count >0;
             }
-
             catch (Exception)
             {
                 return false;
@@ -56,28 +57,21 @@ namespace otello
 
         public bool validar(string usuario)
         {
-            conexion cn = new conexion();
+            sincronizar bas = new sincronizar();
             try
             {
                 string sql = "SELECT * FROM base_usuarios WHERE usuario = '" + usuario + "'";
-                SqlCommand cmd = new SqlCommand(sql, cn.getTomos());
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-
-                return dt.Rows.Count == 1;
-
-
-
+                SqlCommand lectura = new SqlCommand(sql, bas.getTomos());
+                SqlDataAdapter iten = new SqlDataAdapter(lectura);
+                DataTable tabla = new DataTable();
+                iten.Fill(tabla);
+                return tabla.Rows.Count > 0;
             }
-
             catch (Exception)
             {
                 return false;
-
             }
         }
-
     }
 
 

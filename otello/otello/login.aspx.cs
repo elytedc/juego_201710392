@@ -20,11 +20,6 @@ namespace otello
             Response.Write("<scrip>window.alert('registrece')</script>");
             Response.Redirect("registrar.aspx");
 
-
-
-
-
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -33,16 +28,13 @@ namespace otello
             string usuario, contraseña;
             usuario = TextBox1.Text;
             contraseña = TextBox2.Text;
-           
-
             if (p.buscar(usuario, contraseña))
             {
-                Response.Write("<scrip>window.alert('bienvenido')</script>");
                 Response.Redirect("menu.aspx");
             }
             else
             {
-                Response.Write("<scrip>window.alert('error')</script>");
+                Response.Write("<scrip>window.alert('incorrectas')</script>");
             }
 
         }
