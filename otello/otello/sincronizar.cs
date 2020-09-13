@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data;
-using System.Data.Sql;
 using System.Data.SqlClient;
 
 namespace otello
@@ -17,7 +13,8 @@ namespace otello
             string ruta = "Data Source=DESKTOP-VLR9CVA;Initial Catalog=usuarios_otello;Integrated Security=True";
             SqlConnection bas = new SqlConnection(ruta);
             bas.Open();
-            return bas;}
+            return bas;
+        }
 
 
         public bool insertar(string nombre, string apellido, string usuario, string contraseña, string fecha1, string pais1, string correo)
@@ -47,7 +44,7 @@ namespace otello
                 SqlDataAdapter sda = new SqlDataAdapter(lectura);
                 DataTable tabla = new DataTable();
                 sda.Fill(tabla);
-                return tabla.Rows.Count >0;
+                return tabla.Rows.Count > 0;
             }
             catch (Exception)
             {

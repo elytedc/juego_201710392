@@ -1,15 +1,6 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Windows;
-using Microsoft;
+﻿using System;
 using System.Xml;
 using System.Xml.Linq;
-using System.Net;
 
 namespace otello
 
@@ -17,7 +8,7 @@ namespace otello
     public partial class partidavs : System.Web.UI.Page
     {
         public static string colorito = "";
-        public static  string fila = "";
+        public static string fila = "";
         public static string columna = "";
         public static string estado = "falso";
         public static string colorturno = "";
@@ -39,8 +30,8 @@ namespace otello
             }
         }
 
-       
-        public void botones(string fila, string columna,string color)
+
+        public void botones(string fila, string columna, string color)
         {
 
         }
@@ -51,10 +42,12 @@ namespace otello
         }
 
         protected void a01_Click(object sender, EventArgs e)
-        { if (colorturno == "blanco") { a01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { a01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }   }
+        {
+            if (colorturno == "blanco") { a01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
+            else { a01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+        }
 
-        
+
 
         protected void b01_Click(object sender, EventArgs e)
         {
@@ -65,25 +58,28 @@ namespace otello
         public void a10()
         {
             string c = fUpload.FileName;
-            string cadena= @"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\" + c;
+            string cadena = @"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\" + c;
             XmlReader lectura = XmlReader.Create(cadena);
-            
+
 
             while (lectura.Read())
             {
-                if (lectura.IsStartElement()) {
+                if (lectura.IsStartElement())
+                {
                     if (estado == "falso")
                     {
                         switch (lectura.Name.ToString())
                         {
                             case "color": colorito = lectura.ReadString(); break;
-                            case "fila": fila = lectura.ReadString();  break;
-                            case "columna": columna = lectura.ReadString();  break;
-                            case "siguienteTiro":estado = "verdadero";
+                            case "fila": fila = lectura.ReadString(); break;
+                            case "columna": columna = lectura.ReadString(); break;
+                            case "siguienteTiro":
+                                estado = "verdadero";
                                 break;
                         }
                     }
-                    else {
+                    else
+                    {
 
                         switch (lectura.Name.ToString())
                         {
@@ -97,10 +93,11 @@ namespace otello
 
                     }
 
-                } 
+                }
 
-                 if ((colorito == "blanco")) {
-                    if ((fila == "1") && (columna == "A")) { a01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = "";}
+                if ((colorito == "blanco"))
+                {
+                    if ((fila == "1") && (columna == "A")) { a01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
                     if ((fila == "2") && (columna == "A")) { a02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
                     if ((fila == "3") && (columna == "A")) { a03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
                     if ((fila == "4") && (columna == "A")) { a04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
@@ -252,9 +249,9 @@ namespace otello
 
 
             }
-            
 
-        
+
+
 
         }
 
@@ -639,9 +636,11 @@ namespace otello
             XDocument document = new XDocument(new XDeclaration("1.0", "utf-8", null));
             XElement cabeza = new XElement("tablero");
             document.Add(cabeza);
- if(a01.BackColor== System.Drawing.Color.White) {
- XElement ficha = new XElement("ficha");  ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
-ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha); }
+            if (a01.BackColor == System.Drawing.Color.White)
+            {
+                XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
+                ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha);
+            }
             if (a02.BackColor == System.Drawing.Color.White)
             {
                 XElement ficha = new XElement("ficha"); ficha.Add(new XElement("color", "blanco")); ficha.Add(new XElement("columna", "A"));
@@ -1299,9 +1298,9 @@ ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha); }
             }
 
 
-            XElement color = new XElement("siguienteTiro"); 
+            XElement color = new XElement("siguienteTiro");
             color.Add(new XElement("color", colorturno)); cabeza.Add(color);
-            document.Save(@"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\partida"+con+".xml");
+            document.Save(@"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\partida" + con + ".xml");
             con++;
 
 
@@ -1313,7 +1312,7 @@ ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha); }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            guardarxml();   
+            guardarxml();
         }
 
         protected void B_Click(object sender, EventArgs e)
@@ -1335,7 +1334,7 @@ ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha); }
             b06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             b07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             b08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
-        
+
             c1.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             c02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             c03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
@@ -1344,7 +1343,7 @@ ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha); }
             c06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             c07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             c08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
-        
+
             d01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             d02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             d03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
@@ -1380,7 +1379,7 @@ ficha.Add(new XElement("fila", "1")); cabeza.Add(ficha); }
             g06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             g07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             g08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
-        
+
             h01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             h02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             h03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
