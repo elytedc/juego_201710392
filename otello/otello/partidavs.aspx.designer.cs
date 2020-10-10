@@ -42,15 +42,6 @@ namespace otello
         protected global::System.Web.UI.WebControls.Button c08;
 
         /// <summary>
-        /// Control e05.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button e05;
-
-        /// <summary>
         /// Control d04.
         /// </summary>
         /// <remarks>
@@ -609,6 +600,15 @@ namespace otello
         protected global::System.Web.UI.WebControls.Button b01;
 
         /// <summary>
+        /// Control e05.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button e05;
+
+        /// <summary>
         /// Control fUpload.
         /// </summary>
         /// <remarks>
@@ -634,5 +634,14 @@ namespace otello
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button B;
+
+        /// <summary>
+        /// Control Button2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

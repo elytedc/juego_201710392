@@ -37,23 +37,7 @@
             right: 819px;
             background-color: #009D0E;
         }
-        .auto-style4 {
-            border: 2px solid #ffffff;
-            border-radius: 200px;
-            color: #fff;
-            font-size: 28px;
-            font-weight: bold;
-            padding: 5px 15px;
-            position: absolute;
-            top: 375px;
-            margin-left: 10px;
-            width: 35px;
-            height: 32px;
-            left: 315px;
-            right: 693px;
-            background-color: #009D0E;
-        }
-        
+                
         
 
 
@@ -73,7 +57,7 @@
             left: 255px;
             right: 753px;
             bottom: 92px;
-            background-color: #009D0E;
+            background-color: #FFFFFF;
         }
 
         
@@ -87,13 +71,13 @@
             font-weight: bold;
             padding: 5px 15px;
             position: absolute;
-            top: 374px;
+            top: 377px;
             margin-left: 10px;
             width: 35px;
             height: 35px;
-            left: 255px;
-            right: 753px;
-            background-color: #009D0E;
+            left: 254px;
+            right: 587px;
+            background-color: #000000;
         }
         .auto-style45 {
             border: 2px solid #ffffff;
@@ -686,13 +670,13 @@
             font-weight: bold;
             padding: 5px 15px;
             position: absolute;
-            top: 331px;
+            top: 335px;
             margin-left: 10px;
             width: 35px;
             height: 35px;
-            left: 316px;
-            right: 692px;
-            background-color: #009D0E;
+            left: 321px;
+            background-color: #000000;
+            bottom: 170px;
         }
         .auto-style29 {
             border: 2px solid #ffffff;
@@ -1092,6 +1076,27 @@
         
 
 
+        .auto-style74 {
+            border: 2px solid #ffffff;
+            border-radius: 200px;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 5px 15px;
+            position: absolute;
+            top: 374px;
+            margin-left: 10px;
+            width: 35px;
+            height: 32px;
+            right: 518px;
+            background-color: #FFFFFF;
+            bottom: 190px;
+            left: 323px;
+        }
+
+        
+
+
         </style>
 </head>
 <body>
@@ -1109,7 +1114,6 @@
             <p>
                 <asp:Image ID="Image1" runat="server" Height="425px" ImageUrl="~/ima/fonfo.jpg" Width="599px" CssClass="auto-style73" />
                 <asp:Button ID="c08" runat="server" CssClass="auto-style20" Text="" BorderColor="#009D0E" OnClick="c08_Click" />
-                <asp:Button ID="e05" runat="server" CssClass="auto-style4" Text="" BorderColor="#009D0E" OnClick="e05_Click" />
                 <asp:Button ID="d04" runat="server" CssClass="auto-style1" Text="" BorderColor="#009D0E" OnClick="d04_Click" />
                 <asp:Button ID="d05" runat="server" CssClass="auto-style3" Text="" BorderColor="#009D0E" OnClick="d05_Click" />
                 <asp:Button ID="e03" runat="server" CssClass="auto-style45" Text="" BorderColor="#009D0E" OnClick="e03_Click" />
@@ -1172,6 +1176,11 @@
                 <asp:Button ID="b02" runat="server" CssClass="auto-style65" Text="" BorderColor="#009D0E" OnClick="b02_Click" />
                 <asp:Button ID="h08" runat="server" CssClass="auto-style8" Text="" BorderColor="#009D0E" OnClick="h08_Click" />
                 <asp:Button ID="b01" runat="server" CssClass="auto-style71" Text="" OnClick="b01_Click" BorderColor="#009D0E" />
+               
+
+                <asp:Button ID="e05" runat="server" CssClass="auto-style74" Text="" BorderColor="#009D0E" OnClick="e05_Click" />
+               
+
             </p>
             <p>
                 CARGAR XML: <asp:FileUpload ID="fUpload" runat="server"  type="file" onchange="this.form.submit();" Width="216px"  Height="22px"  />
@@ -1180,6 +1189,8 @@
                 <asp:Button ID="Button1" runat="server" Height="21px" OnClick="Button1_Click" Text="GUARDAR XML" Width="108px" />
 &nbsp; LIMPIAR:
                 <asp:Button ID="B" runat="server" CssClass="auto-style72" Height="20px" Width="44px" OnClick="B_Click" />
+            &nbsp;
+                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="Button" />
             </p>
             <p>
                 &nbsp;</p>&nbsp;<br />

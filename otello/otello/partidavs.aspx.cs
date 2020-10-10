@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Xml;
 using System.Xml.Linq;
+using System.Collections;
 
 namespace otello
 
 {
     public partial class partidavs : System.Web.UI.Page
+
     {
+        public static string[,] ma = new string[9, 9];
         public static string colorito = "";
         public static string fila = "";
         public static string columna = "";
         public static string estado = "falso";
         public static string colorturno = "";
         public static int con = 1;
+        
 
         public object FlatStyle { get; private set; }
         public object DialogResult { get; private set; }
@@ -30,6 +34,501 @@ namespace otello
             }
         }
 
+        public void mostrar()
+        {
+            for (int x = 1; x < 9; x++)
+            {
+                for (int y = 1; y < 9; y++)
+                {
+                    if (ma[x, y] == "B")
+
+                    {
+                        if (ma[x, y] == ma[1, 1]) { a01.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[1, 2]) { a02.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[1, 3]) { a03.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[1, 4]) { a04.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[1, 5]) { a05.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[1, 6]) { a06.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[1, 7]) { a07.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[1, 8]) { a08.BackColor = System.Drawing.Color.White; }
+
+                        if (ma[x, y] == ma[2, 1]) { b01.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[2, 2]) { b02.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[2, 3]) { b03.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[2, 4]) { b04.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[2, 5]) { b05.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[2, 6]) { b06.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[2, 7]) { b07.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[2, 8]) { b08.BackColor = System.Drawing.Color.White; }
+
+                        if (ma[x, y] == ma[3, 1]) { c1.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[3, 2]) { c02.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[3, 3]) { c03.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[3, 4]) { c04.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[3, 5]) { c05.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[3, 6]) { c06.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[3, 7]) { c07.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[3, 8]) { c08.BackColor = System.Drawing.Color.White; }
+
+                        if (ma[x, y] == ma[4, 1]) { d01.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[4, 2]) { d02.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[4, 3]) { d03.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[4, 4]) { d04.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[4, 5]) { d05.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[4, 6]) { d06.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[4, 7]) { d07.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[4, 8]) { d08.BackColor = System.Drawing.Color.White; }
+
+                        if (ma[x, y] == ma[5, 1]) { e01.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[5, 2]) { e02.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[5, 3]) { e03.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[5, 4]) { e04.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[5, 5]) { e05.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[5, 6]) { e06.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[5, 7]) { e07.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[5, 8]) { e08.BackColor = System.Drawing.Color.White; }
+
+                        if (ma[x, y] == ma[6, 1]) { f01.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[6, 2]) { f02.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[6, 3]) { f03.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[6, 4]) { f04.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[6, 5]) { f05.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[6, 6]) { f06.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[6, 7]) { f07.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[6, 8]) { f08.BackColor = System.Drawing.Color.White; }
+
+                        if (ma[x, y] == ma[7, 1]) { g01.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[7, 2]) { g02.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[7, 3]) { g03.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[7, 4]) { g04.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[7, 5]) { g05.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[7, 6]) { g06.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[7, 7]) { g07.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[7, 8]) { g08.BackColor = System.Drawing.Color.White; }
+
+                        if (ma[x, y] == ma[8, 1]) { h01.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[8, 2]) { h02.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[8, 3]) { h03.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[8, 4]) { h04.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[8, 5]) { h05.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[8, 6]) { h06.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[8, 7]) { h07.BackColor = System.Drawing.Color.White; }
+                        if (ma[x, y] == ma[8, 8]) { h08.BackColor = System.Drawing.Color.White; }
+
+
+                    }
+
+                    else if (ma[x, y] == "N")
+                    {
+                        if (ma[x, y] == ma[1, 1]) { a01.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[1, 2]) { a02.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[1, 3]) { a03.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[1, 4]) { a04.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[1, 5]) { a05.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[1, 6]) { a06.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[1, 7]) { a07.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[1, 8]) { a08.BackColor = System.Drawing.Color.Black; }
+
+                        if (ma[x, y] == ma[2, 1]) { b01.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[2, 2]) { b02.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[2, 3]) { b03.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[2, 4]) { b04.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[2, 5]) { b05.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[2, 6]) { b06.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[2, 7]) { b07.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[2, 8]) { b08.BackColor = System.Drawing.Color.Black; }
+
+                        if (ma[x, y] == ma[3, 1]) { c1.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[3, 2]) { c02.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[3, 3]) { c03.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[3, 4]) { c04.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[3, 5]) { c05.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[3, 6]) { c06.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[3, 7]) { c07.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[3, 8]) { c08.BackColor = System.Drawing.Color.Black; }
+
+                        if (ma[x, y] == ma[4, 1]) { d01.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[4, 2]) { d02.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[4, 3]) { d03.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[4, 4]) { d04.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[4, 5]) { d05.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[4, 6]) { d06.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[4, 7]) { d07.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[4, 8]) { d08.BackColor = System.Drawing.Color.Black; }
+
+                        if (ma[x, y] == ma[5, 1]) { e01.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[5, 2]) { e02.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[5, 3]) { e03.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[5, 4]) { e04.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[5, 5]) { e05.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[5, 6]) { e06.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[5, 7]) { e07.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[5, 8]) { e08.BackColor = System.Drawing.Color.Black; }
+
+                        if (ma[x, y] == ma[6, 1]) { f01.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[6, 2]) { f02.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[6, 3]) { f03.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[6, 4]) { f04.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[6, 5]) { f05.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[6, 6]) { f06.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[6, 7]) { f07.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[6, 8]) { f08.BackColor = System.Drawing.Color.Black; }
+
+                        if (ma[x, y] == ma[7, 1]) { g01.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[7, 2]) { g02.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[7, 3]) { g03.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[7, 4]) { g04.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[7, 5]) { g05.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[7, 6]) { g06.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[7, 7]) { g07.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[7, 8]) { g08.BackColor = System.Drawing.Color.Black; }
+
+                        if (ma[x, y] == ma[8, 1]) { h01.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[8, 2]) { h02.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[8, 3]) { h03.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[8, 4]) { h04.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[8, 5]) { h05.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[8, 6]) { h06.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[8, 7]) { h07.BackColor = System.Drawing.Color.Black; }
+                        if (ma[x, y] == ma[8, 8]) { h08.BackColor = System.Drawing.Color.Black; }
+
+                    }
+
+                    else {
+                        if (ma[x, y] == ma[1, 1]) { a01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[1, 2]) { a02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[1, 3]) { a03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[1, 4]) { a04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[1, 5]) { a05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[1, 6]) { a06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[1, 7]) { a07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[1, 8]) { a08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+
+                        if (ma[x, y] == ma[2, 1]) { b01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[2, 2]) { b02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[2, 3]) { b03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[2, 4]) { b04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[2, 5]) { b05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[2, 6]) { b06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[2, 7]) { b07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[2, 8]) { b08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+
+                        if (ma[x, y] == ma[3, 1]) { c1.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[3, 2]) { c02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[3, 3]) { c03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[3, 4]) { c04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[3, 5]) { c05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[3, 6]) { c06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[3, 7]) { c07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[3, 8]) { c08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+
+                        if (ma[x, y] == ma[4, 1]) { d01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[4, 2]) { d02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[4, 3]) { d03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[4, 4]) { d04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[4, 5]) { d05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[4, 6]) { d06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[4, 7]) { d07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[4, 8]) { d08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+
+                        if (ma[x, y] == ma[5, 1]) { e01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[5, 2]) { e02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[5, 3]) { e03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[5, 4]) { e04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[5, 5]) { e05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[5, 6]) { e06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[5, 7]) { e07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[5, 8]) { e08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+
+                        if (ma[x, y] == ma[6, 1]) { f01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[6, 2]) { f02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[6, 3]) { f03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[6, 4]) { f04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[6, 5]) { f05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[6, 6]) { f06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[6, 7]) { f07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[6, 8]) { f08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+
+                        if (ma[x, y] == ma[7, 1]) { g01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[7, 2]) { g02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[7, 3]) { g03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[7, 4]) { g04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[7, 5]) { g05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[7, 6]) { g06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[7, 7]) { g07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[7, 8]) { g08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+
+                        if (ma[x, y] == ma[8, 1]) { h01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[8, 2]) { h02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[8, 3]) { h03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[8, 4]) { h04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[8, 5]) { h05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[8, 6]) { h06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[8, 7]) { h07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+                        if (ma[x, y] == ma[8, 8]) { h08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
+
+                        h08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                    }
+
+
+                }
+            }
+
+
+
+                    }
+
+
+        public void recorrer(int fila, int columna, string color)
+        {
+
+            if (colorturno == "blanco")
+            {
+                ma[fila, columna] = color;
+                if (ma[fila + 1, columna] == "N") { ma[fila + 1, columna] = "B"; }
+                //abajo suma de fila
+                if (ma[fila - 1, columna] == "N") { ma[fila - 1, columna] = "B"; }
+                //derecha suma de fila
+                if (ma[fila, columna + 1] == "N") { ma[fila, columna + 1] = "B"; }
+                //izquierda suma de fil
+                if (ma[fila, columna - 1] == "N") { ma[fila, columna - 1] = "B"; }
+            }
+
+            if (colorturno == "negro")
+            {
+                ma[fila, columna] = color;
+                //arriba suma de fila
+                if (ma[fila + 1, columna] == "B") { ma[fila + 1, columna] = "N"; }
+                //abajo suma de fila
+                if (ma[fila - 1, columna] == "B") { ma[fila - 1, columna] = "N"; }
+                //derecha suma de fila
+                if (ma[fila, columna + 1] == "B") { ma[fila, columna + 1] = "N"; }
+                //izquierda suma de fila
+                if (ma[fila, columna - 1] == "B") { ma[fila, columna - 1] = "N"; }
+            }
+
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (ma[x, y] == "P")
+                    {
+                        ma[x, y] = "";
+                    }
+                    else { }
+                }
+            }
+
+
+        }
+
+
+        public void posibles()
+        {
+                for (int x = 1; x < 9; x++)
+                {
+                    for (int y = 1; y < 9; y++)
+                    {
+                    if (ma[x, y] == "P")
+
+                    {
+                        if (ma[x, y] == ma[1, 1]) { a01.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[1, 2]) { a02.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[1, 3]) { a03.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[1, 4]) { a04.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[1, 5]) { a05.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[1, 6]) { a06.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[1, 7]) { a07.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[1, 8]) { a08.BackColor = System.Drawing.Color.Red; }
+
+                        if (ma[x, y] == ma[2, 1]) { b01.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[2, 2]) { b02.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[2, 3]) { b03.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[2, 4]) { b04.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[2, 5]) { b05.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[2, 6]) { b06.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[2, 7]) { b07.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[2, 8]) { b08.BackColor = System.Drawing.Color.Red; }
+
+                        if (ma[x, y] == ma[3, 1]) { c1.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[3, 2]) { c02.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[3, 3]) { c03.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[3, 4]) { c04.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[3, 5]) { c05.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[3, 6]) { c06.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[3, 7]) { c07.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[3, 8]) { c08.BackColor = System.Drawing.Color.Red; }
+
+                        if (ma[x, y] == ma[4, 1]) { d01.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[4, 2]) { d02.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[4, 3]) { d03.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[4, 4]) { d04.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[4, 5]) { d05.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[4, 6]) { d06.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[4, 7]) { d07.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[4, 8]) { d08.BackColor = System.Drawing.Color.Red; }
+
+                        if (ma[x, y] == ma[5, 1]) { e01.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[5, 2]) { e02.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[5, 3]) { e03.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[5, 4]) { e04.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[5, 5]) { e05.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[5, 6]) { e06.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[5, 7]) { e07.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[5, 8]) { e08.BackColor = System.Drawing.Color.Red; }
+
+                        if (ma[x, y] == ma[6, 1]) { f01.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[6, 2]) { f02.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[6, 3]) { f03.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[6, 4]) { f04.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[6, 5]) { f05.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[6, 6]) { f06.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[6, 7]) { f07.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[6, 8]) { f08.BackColor = System.Drawing.Color.Red; }
+
+                        if (ma[x, y] == ma[7, 1]) { g01.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[7, 2]) { g02.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[7, 3]) { g03.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[7, 4]) { g04.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[7, 5]) { g05.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[7, 6]) { g06.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[7, 7]) { g07.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[7, 8]) { g08.BackColor = System.Drawing.Color.Red; }
+
+                        if (ma[x, y] == ma[8, 1]) { h01.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[8, 2]) { h02.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[8, 3]) { h03.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[8, 4]) { h04.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[8, 5]) { h05.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[8, 6]) { h06.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[8, 7]) { h07.BackColor = System.Drawing.Color.Red; }
+                        if (ma[x, y] == ma[8, 8]) { h08.BackColor = System.Drawing.Color.Red; }
+
+                    }
+                    else { }                 
+                }
+                }
+            
+        }
+
+
+    
+
+
+
+        public void tabla(int fila, int columna,string color)
+        {
+            ma[fila, columna] = color;
+
+
+            if (colorturno=="blanco") {
+                for (int x = 0; x < 9; x++)
+                {
+                    for (int y = 0; y < 9; y++)
+                    {
+                        if (ma[x, y]=="B")
+
+                        {
+                            //arriba suma de fila
+                            if (ma[x + 1, y]=="N") { ma[x + 2, y] = "P"; }
+                            //abajo suma de fila
+                            if (ma[x - 1, y]=="N") { ma[x - 2, y] = "P"; }
+                            //derecha suma de fila
+                            if (ma[x, y + 1]=="N") { ma[x, y + 2] = "P"; }
+                            //izquierda suma de fila
+                            if (ma[x, y - 1]=="N") { ma[x, y - 2] = "P"; }
+
+                        }
+                        else { }
+                    }
+                }
+            }
+
+            if (colorturno == "negro")
+            {
+                for (int x = 0; x < 9; x++)
+                {
+                    for (int y = 0; y < 9; y++)
+                    {
+                        if (ma[x, y] == "N")
+
+                        {
+                            //arriba suma de fila
+                            if (ma[x + 1, y] == "B") { ma[x + 2, y] = "P"; }
+                            //abajo suma de fila
+                            if (ma[x - 1, y] == "B") { ma[x - 2, y] = "P"; }
+                            //derecha suma de fila
+                            if (ma[x, y + 1] == "B") { ma[x, y + 2] = "P"; }
+                            //izquierda suma de fila
+                            if (ma[x, y - 1] == "B") { ma[x, y - 2] = "P"; }
+
+                        }
+                        else { }
+                    }
+                }
+            }
+        }
+
+
+
+
+        public void tabla1()
+        {
+           
+
+
+            if (colorturno == "blanco")
+            {
+                for (int x = 0; x < 9; x++)
+                {
+                    for (int y = 0; y < 9; y++)
+                    {
+                        if (ma[x, y] == "B")
+
+                        {
+                            //arriba suma de fila
+                            if (ma[x + 1, y] == "N") { ma[x + 2, y] = "P"; }
+                            //abajo suma de fila
+                            if (ma[x - 1, y] == "N") { ma[x - 2, y] = "P"; }
+                            //derecha suma de fila
+                            if (ma[x, y + 1] == "N") { ma[x, y + 2] = "P"; }
+                            //izquierda suma de fila
+                            if (ma[x, y - 1] == "N") { ma[x, y - 2] = "P"; }
+
+                        }
+                        else { }
+                    }
+                }
+            }
+
+            if (colorturno == "negro")
+            {
+                for (int x = 0; x < 9; x++)
+                {
+                    for (int y = 0; y < 9; y++)
+                    {
+                        if (ma[x, y] == "N")
+
+                        {
+                            //arriba suma de fila
+                            if (ma[x + 1, y] == "B") { ma[x + 2, y] = "P"; }
+                            //abajo suma de fila
+                            if (ma[x - 1, y] == "B") { ma[x - 2, y] = "P"; }
+                            //derecha suma de fila
+                            if (ma[x, y + 1] == "B") { ma[x, y + 2] = "P"; }
+                            //izquierda suma de fila
+                            if (ma[x, y - 1] == "B") { ma[x, y - 2] = "P"; }
+
+                        }
+                        else { }
+                    }
+                }
+            }
+        }
+
+
+
+
 
         public void botones(string fila, string columna, string color)
         {
@@ -43,16 +542,40 @@ namespace otello
 
         protected void a01_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { a01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { a01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { a01.BackColor = System.Drawing.Color.White;
+                recorrer(1, 1, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { a01.BackColor = System.Drawing.Color.Black;
+                recorrer(1, 1, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
 
 
         protected void b01_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { b01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { b01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { b01.BackColor = System.Drawing.Color.White;
+                recorrer(2, 1, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { b01.BackColor = System.Drawing.Color.Black;
+                recorrer(2, 1, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         public void a10()
@@ -258,375 +781,1113 @@ namespace otello
 
         protected void a02_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { a02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { a02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { a02.BackColor = System.Drawing.Color.White;
+                recorrer(1, 2, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { a02.BackColor = System.Drawing.Color.Black;
+                recorrer(1, 2, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void a03_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { a03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { a03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { a03.BackColor = System.Drawing.Color.White;
+                recorrer(1, 3, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { a03.BackColor = System.Drawing.Color.Black;
+                recorrer(1, 3, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void a04_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { a04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { a04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { a04.BackColor = System.Drawing.Color.White;
+                recorrer(1, 4, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { a04.BackColor = System.Drawing.Color.Black;
+                recorrer(1, 4, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void a05_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { a05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { a05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { a05.BackColor = System.Drawing.Color.White;
+                recorrer(1, 5, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { a05.BackColor = System.Drawing.Color.Black;
+                recorrer(1, 5, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void a06_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { a06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { a06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { a06.BackColor = System.Drawing.Color.White;
+                recorrer(1, 6, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { a06.BackColor = System.Drawing.Color.Black;
+                recorrer(1, 6, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void a07_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { a07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { a07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { a07.BackColor = System.Drawing.Color.White;
+                recorrer(1, 7, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { a07.BackColor = System.Drawing.Color.Black;
+                recorrer(1, 7, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void a08_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { a08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { a08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { a08.BackColor = System.Drawing.Color.White;
+                recorrer(1, 8, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { a08.BackColor = System.Drawing.Color.Black;
+                recorrer(1, 8, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void b02_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { b02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { b02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { b02.BackColor = System.Drawing.Color.White;
+                recorrer(2, 2, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { b02.BackColor = System.Drawing.Color.Black;
+                recorrer(2, 2, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void b03_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { b03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { b03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { b03.BackColor = System.Drawing.Color.White;
+                recorrer(2, 3, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { b03.BackColor = System.Drawing.Color.Black;
+                recorrer(2, 3, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void b04_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { b04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { b04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { b04.BackColor = System.Drawing.Color.White;
+                recorrer(2, 4, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { b04.BackColor = System.Drawing.Color.Black;
+                recorrer(2, 4, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void b05_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { b05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { b05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { b05.BackColor = System.Drawing.Color.White;
+                recorrer(2, 5, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { b05.BackColor = System.Drawing.Color.Black;
+                recorrer(2, 5, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void b06_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { b06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { b06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { b06.BackColor = System.Drawing.Color.White;
+                recorrer(2, 6, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { b06.BackColor = System.Drawing.Color.Black;
+                recorrer(2, 6, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void b07_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { b07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { b07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { b07.BackColor = System.Drawing.Color.White;
+                recorrer(2, 7, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { b07.BackColor = System.Drawing.Color.Black;
+                recorrer(2, 7, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void b08_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { b08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { b08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { b08.BackColor = System.Drawing.Color.White;
+                recorrer(2, 8, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { b08.BackColor = System.Drawing.Color.Black;
+                recorrer(2, 8, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void c1_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { c1.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { c1.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { c1.BackColor = System.Drawing.Color.White;
+                recorrer(3, 1, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { c1.BackColor = System.Drawing.Color.Black;
+                recorrer(3, 1, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void c02_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { c02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { c02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { c02.BackColor = System.Drawing.Color.White;
+                recorrer(3, 2, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { c02.BackColor = System.Drawing.Color.Black;
+                recorrer(3, 2, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void c03_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { c03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { c03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { c03.BackColor = System.Drawing.Color.White;
+                recorrer(3, 3, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { c03.BackColor = System.Drawing.Color.Black;
+                recorrer(3, 3, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void c04_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { c04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { c04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { c04.BackColor = System.Drawing.Color.White;
+                recorrer(3, 4, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { c04.BackColor = System.Drawing.Color.Black;
+                recorrer(3, 4, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+
+            }
         }
 
         protected void c05_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { c05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { c05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { c05.BackColor = System.Drawing.Color.White;
+                recorrer(3, 5, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { c05.BackColor = System.Drawing.Color.Black;
+                recorrer(3, 5, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void c06_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { c06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { c06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { c06.BackColor = System.Drawing.Color.White;
+                recorrer(3, 6, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { c06.BackColor = System.Drawing.Color.Black;
+                recorrer(3, 6, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void c07_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { c07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { c07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { c07.BackColor = System.Drawing.Color.White;
+                recorrer(3, 7, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { c07.BackColor = System.Drawing.Color.Black;
+                recorrer(3, 7, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void c08_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { c08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { c08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { c08.BackColor = System.Drawing.Color.White;
+                recorrer(3, 8, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { c08.BackColor = System.Drawing.Color.Black;
+                recorrer(3, 8, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void d01_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { d01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { d01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { d01.BackColor = System.Drawing.Color.White;
+                recorrer(4, 1, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { d01.BackColor = System.Drawing.Color.Black;
+                recorrer(4, 1, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void d02_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { d02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { d02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { d02.BackColor = System.Drawing.Color.White;
+                recorrer(4, 2, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { d02.BackColor = System.Drawing.Color.Black;
+                recorrer(4, 2, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void d03_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { d03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { d03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { d03.BackColor = System.Drawing.Color.White;
+
+                recorrer(4, 3, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+
+            }
+            else { d03.BackColor = System.Drawing.Color.Black;
+                recorrer(4, 3, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void d04_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { d04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { d04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            
+ 
+
+            if (colorturno == "blanco") { d04.BackColor = System.Drawing.Color.White;
+                recorrer(4, 4, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { d04.BackColor = System.Drawing.Color.Black;
+                recorrer(4, 4, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void d05_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { d05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { d05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { d05.BackColor = System.Drawing.Color.White;
+                recorrer(4, 5, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { d05.BackColor = System.Drawing.Color.Black;
+                recorrer(4, 5, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void d06_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { d06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { d06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { d06.BackColor = System.Drawing.Color.White;
+                recorrer(4, 6, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { d06.BackColor = System.Drawing.Color.Black; colorturno = "blanco";
+                recorrer(4, 6, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+
+            }
+            
         }
 
         protected void d07_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { d07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { d07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { d07.BackColor = System.Drawing.Color.White;
+                recorrer(4, 7, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { d07.BackColor = System.Drawing.Color.Black;
+                recorrer(4, 7, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void d08_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { d08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { d08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { d08.BackColor = System.Drawing.Color.White;
+                recorrer(4, 8, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { d08.BackColor = System.Drawing.Color.Black;
+                recorrer(4, 8, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void e01_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { e01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { e01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { e01.BackColor = System.Drawing.Color.White;
+                recorrer(5, 1, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { e01.BackColor = System.Drawing.Color.Black;
+                recorrer(5, 1, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
 
         }
 
         protected void e02_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { e02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { e02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { e02.BackColor = System.Drawing.Color.White;
+                recorrer(5, 2, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { e02.BackColor = System.Drawing.Color.Black;
+                recorrer(5, 2, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void e03_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { e03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { e03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { e03.BackColor = System.Drawing.Color.White;
+                recorrer(5, 3, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { e03.BackColor = System.Drawing.Color.Black;
+                recorrer(5, 3, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void e04_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { e04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { e04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { e04.BackColor = System.Drawing.Color.White;
+                recorrer(5, 4, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { e04.BackColor = System.Drawing.Color.Black;
+                recorrer(5, 4, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
-        protected void e05_Click(object sender, EventArgs e)
-        {
-            if (colorturno == "blanco") { e05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { e05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
-        }
+        
 
         protected void e06_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { e06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { e06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { e06.BackColor = System.Drawing.Color.White;
+                recorrer(5, 6, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { e06.BackColor = System.Drawing.Color.Black;
+                recorrer(5, 6, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void e07_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { e07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { e07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { e07.BackColor = System.Drawing.Color.White;
+                recorrer(5, 7, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { e07.BackColor = System.Drawing.Color.Black;
+                recorrer(5, 7, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void e08_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { e08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { e08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { e08.BackColor = System.Drawing.Color.White;
+                recorrer(5, 8, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { e08.BackColor = System.Drawing.Color.Black;
+                recorrer(5, 8, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void f01_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { f01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { f01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { f01.BackColor = System.Drawing.Color.White;
+                recorrer(6, 1, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { f01.BackColor = System.Drawing.Color.Black;
+                recorrer(6, 1, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void f02_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { f02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { f02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { f02.BackColor = System.Drawing.Color.White;
+                recorrer(6, 2, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { f02.BackColor = System.Drawing.Color.Black;
+                recorrer(6, 2, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void f03_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { f03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { f03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { f03.BackColor = System.Drawing.Color.White;
+                recorrer(6, 3, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { f03.BackColor = System.Drawing.Color.Black;
+                recorrer(6, 3, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void f04_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { f04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { f04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { f04.BackColor = System.Drawing.Color.White;
+                recorrer(6, 4, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+
+            }
+            else { f04.BackColor = System.Drawing.Color.Black;
+                recorrer(6, 4, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void f05_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { f05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { f05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { f05.BackColor = System.Drawing.Color.White;
+                recorrer(6, 5, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { f05.BackColor = System.Drawing.Color.Black;
+                recorrer(6, 5, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void f06_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { f06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { f06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { f06.BackColor = System.Drawing.Color.White;
+                recorrer(6, 6, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { f06.BackColor = System.Drawing.Color.Black;
+                recorrer(6, 6, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void f07_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { f07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { f07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { f07.BackColor = System.Drawing.Color.White;
+                recorrer(6, 7, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { f07.BackColor = System.Drawing.Color.Black;
+                recorrer(6, 7, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void f08_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { f08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { f08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { f08.BackColor = System.Drawing.Color.White;
+                recorrer(6, 8, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { f08.BackColor = System.Drawing.Color.Black;
+                recorrer(6, 8, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void g01_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { g01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { g01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { g01.BackColor = System.Drawing.Color.White;
+                recorrer(7, 1, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+
+            }
+            else { g01.BackColor = System.Drawing.Color.Black;
+                recorrer(7, 1, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void g02_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { g02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { g02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { g02.BackColor = System.Drawing.Color.White;
+                recorrer(7, 2, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { g02.BackColor = System.Drawing.Color.Black;
+                recorrer(7, 2, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void g03_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { g03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { g03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { g03.BackColor = System.Drawing.Color.White;
+                recorrer(7, 3, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { g03.BackColor = System.Drawing.Color.Black;
+                recorrer(7, 3, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void g04_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { g04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { g04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { g04.BackColor = System.Drawing.Color.White;
+                recorrer(7, 4, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { g04.BackColor = System.Drawing.Color.Black;
+                recorrer(7, 4, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void g05_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { g05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { g05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { g05.BackColor = System.Drawing.Color.White;
+                recorrer(7, 5, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { g05.BackColor = System.Drawing.Color.Black;
+                recorrer(7, 5, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void g06_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { g06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { g06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { g06.BackColor = System.Drawing.Color.White;
+                recorrer(7, 6, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { g06.BackColor = System.Drawing.Color.Black;
+                recorrer(7, 6, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void g07_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { g07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { g07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { g07.BackColor = System.Drawing.Color.White;
+                recorrer(7, 7, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { g07.BackColor = System.Drawing.Color.Black;
+                recorrer(7, 7, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void g08_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { g08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { g08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { g08.BackColor = System.Drawing.Color.White;
+                recorrer(7, 8, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { g08.BackColor = System.Drawing.Color.Black;
+                recorrer(7, 8, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void h01_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { h01.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { h01.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { h01.BackColor = System.Drawing.Color.White;
+                recorrer(8, 1, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { h01.BackColor = System.Drawing.Color.Black; 
+                recorrer(8, 1, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void h02_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { h02.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { h02.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { h02.BackColor = System.Drawing.Color.White;
+                recorrer(8, 2, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { h02.BackColor = System.Drawing.Color.Black;
+                recorrer(8, 2, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void h03_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { h03.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { h03.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { h03.BackColor = System.Drawing.Color.White;
+                recorrer(8, 3, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { h03.BackColor = System.Drawing.Color.Black;
+                recorrer(8, 3, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void h04_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { h04.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { h04.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { h04.BackColor = System.Drawing.Color.White;
+                recorrer(8, 4, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { h04.BackColor = System.Drawing.Color.Black;
+                recorrer(8, 4, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void h05_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { h05.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { h05.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { h05.BackColor = System.Drawing.Color.White;
+                recorrer(8, 5, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { h05.BackColor = System.Drawing.Color.Black;
+                recorrer(8, 5, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void h06_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { h06.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { h06.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { h06.BackColor = System.Drawing.Color.White;
+                recorrer(8, 6, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { h06.BackColor = System.Drawing.Color.Black;
+                recorrer(8, 6, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void h07_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { h07.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { h07.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { h07.BackColor = System.Drawing.Color.White;
+                recorrer(8, 7, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { h07.BackColor = System.Drawing.Color.Black;
+                recorrer(8, 7, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
         protected void h08_Click(object sender, EventArgs e)
         {
-            if (colorturno == "blanco") { h08.BackColor = System.Drawing.Color.White; colorturno = "negro"; }
-            else { h08.BackColor = System.Drawing.Color.Black; colorturno = "blanco"; }
+            if (colorturno == "blanco") { h08.BackColor = System.Drawing.Color.White;
+                recorrer(8, 8, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { h08.BackColor = System.Drawing.Color.Black;
+                recorrer(8, 8, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
         }
 
 
@@ -1390,6 +2651,34 @@ namespace otello
             h08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
 
 
+        }
+
+        protected void e05_Click(object sender, EventArgs e)
+        {
+            if (colorturno == "blanco") { e05.BackColor = System.Drawing.Color.White; 
+                recorrer(5, 5, "B");
+                mostrar();
+                colorturno = "negro";
+                tabla1();
+                posibles();
+            }
+            else { e05.BackColor = System.Drawing.Color.Black;
+                recorrer(5, 5, "N");
+                mostrar();
+                colorturno = "blanco";
+                tabla1();
+                posibles();
+            }
+        }
+
+        protected void Button2_Click1(object sender, EventArgs e)
+        {
+            colorturno = "blanco";
+            ma[4, 4] = "B";
+            ma[5, 4] = "N";
+            ma[4, 5] = "N";
+            tabla(5, 5, "B");
+            posibles();
         }
     }
 }
