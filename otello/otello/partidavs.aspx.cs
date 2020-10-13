@@ -404,8 +404,8 @@ namespace otello
                     ma[fila, columna] = color;
                 }
 
-
-
+                //derecha suma de fila
+                //derecha suma de fila
                 //derecha suma de fila
 
                 if (ma[fila, columna] == "PE")
