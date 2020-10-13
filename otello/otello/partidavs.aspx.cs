@@ -16,7 +16,11 @@ namespace otello
         public static string estado = "falso";
         public static string colorturno = "";
         public static int con = 1;
-        
+        public static Boolean a = true;
+        public static Boolean b = true;
+        public static Boolean c = true;
+        public static Boolean d = true;
+
 
         public object FlatStyle { get; private set; }
         public object DialogResult { get; private set; }
@@ -267,7 +271,7 @@ namespace otello
                         if (ma[x, y] == ma[8, 7]) { h07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
                         if (ma[x, y] == ma[8, 8]) { h08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C"); }
 
-                        h08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                        
                     }
 
 
@@ -284,40 +288,169 @@ namespace otello
 
             if (colorturno == "blanco")
             {
-                ma[fila, columna] = color;
-                if (ma[fila + 1, columna] == "N") { ma[fila + 1, columna] = "B"; }
+                
+                if (ma[fila, columna] == "PA") {
+                    ma[fila, columna] = color;
+
+                    for (int z = fila; z < 9; z++)
+                    {
+                        
+                        if (ma[z, columna] == "B")
+                        {
+                            z = 9;
+                        }
+                        else { ma[z, columna] = "B"; }
+                        
+                    } }
+
                 //abajo suma de fila
-                if (ma[fila - 1, columna] == "N") { ma[fila - 1, columna] = "B"; }
+                
+                if (ma[fila, columna] == "PE")
+                {
+                    ma[fila, columna] = color;
+                    for (int z = fila; z > 0; z--)
+                    {
+                        
+                        if (ma[z, columna] == "B")
+                        {
+                            z = 0;
+                        }
+                        else { ma[z, columna] = "B"; }
+                        
+                    }
+                }
+
+
+
                 //derecha suma de fila
-                if (ma[fila, columna + 1] == "N") { ma[fila, columna + 1] = "B"; }
+
+                if (ma[fila, columna] == "PI")
+                {
+                    ma[fila, columna] = color;
+                    for (int z = columna; z < 9; z++)
+                    {
+                        
+                        if (ma[fila, z] == "B")
+                        {
+                            z = 9;
+                        }
+                        else { ma[fila, z] = "B"; }
+                        
+                    }
+                }
+
                 //izquierda suma de fil
-                if (ma[fila, columna - 1] == "N") { ma[fila, columna - 1] = "B"; }
+                if (ma[fila, columna] == "PO")
+                {
+                    ma[fila, columna] = color;
+                    for (int z = columna; z > 0; z--)
+                    {
+                        
+                        if (ma[fila, z] == "B")
+                        {
+                            z = 0;
+                        }
+                        else { ma[fila, z] = "B"; }
+                        
+                    }
+                }
+
+
+
             }
 
             if (colorturno == "negro")
             {
-                ma[fila, columna] = color;
-                //arriba suma de fila
-                if (ma[fila + 1, columna] == "B") { ma[fila + 1, columna] = "N"; }
+                if (ma[fila, columna] == "PA")
+                {
+                    ma[fila, columna] = color;
+                    for (int z = fila; z < 9; z++)
+                    {
+
+                        if (ma[z, columna] == "N")
+                        {
+                            z = 9;
+                        }
+                        else { ma[z, columna] = "N"; }
+                        
+                    }
+                }
+
                 //abajo suma de fila
-                if (ma[fila - 1, columna] == "B") { ma[fila - 1, columna] = "N"; }
+
+                if (ma[fila, columna] == "PE")
+                {
+                    ma[fila, columna] = color;
+                    for (int z = fila; z > 0; z--)
+                    {
+
+                        if (ma[z, columna] == "N")
+                        {
+                            z = 0;
+                        }
+                        else { ma[z, columna] = "N"; }
+                        
+                    }
+                }
+
+
+
                 //derecha suma de fila
-                if (ma[fila, columna + 1] == "B") { ma[fila, columna + 1] = "N"; }
-                //izquierda suma de fila
-                if (ma[fila, columna - 1] == "B") { ma[fila, columna - 1] = "N"; }
+
+                if (ma[fila, columna] == "PI")
+                {
+                    ma[fila, columna] = color;
+                    for (int z = columna; z < 9; z++)
+                    {
+
+                        if (ma[fila, z] == "N")
+                        {
+                            z = 9;
+                        }
+                        else { ma[fila, z] = "N"; }
+                        
+                    }
+                }
+
+                //izquierda suma de fil
+                if (ma[fila, columna] == "PO")
+                {
+                    ma[fila, columna] = color;
+                    for (int z = columna; z > 0; z--)
+                    {
+
+                        if (ma[fila, z] == "N")
+                        {
+                            z = 0;
+                        }
+                        else { ma[fila, z] = "N"; }
+                        
+                    }
+                }
+
+
+
+
             }
 
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
                 {
-                    if (ma[x, y] == "P")
+                    if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO")
                     {
-                        ma[x, y] = "";
+                        ma[x, y] = " ";
                     }
                     else { }
                 }
             }
+
+            a = false;
+            b = false;
+            c = false;
+            d = false;
+
+
 
 
         }
@@ -329,7 +462,7 @@ namespace otello
                 {
                     for (int y = 1; y < 9; y++)
                     {
-                    if (ma[x, y] == "P")
+                    if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO")
 
                     {
                         if (ma[x, y] == ma[1, 1]) { a01.BackColor = System.Drawing.Color.Red; }
@@ -405,15 +538,15 @@ namespace otello
                         if (ma[x, y] == ma[8, 8]) { h08.BackColor = System.Drawing.Color.Red; }
 
                     }
-                    else { }                 
+                    else { }    
+                    
+
+
                 }
                 }
+
             
         }
-
-
-    
-
 
 
         public void tabla(int fila, int columna,string color)
@@ -430,13 +563,13 @@ namespace otello
 
                         {
                             //arriba suma de fila
-                            if (ma[x + 1, y]=="N") { ma[x + 2, y] = "P"; }
+                            if (ma[x + 1, y]=="N") { ma[x + 2, y] = "PA"; }
                             //abajo suma de fila
-                            if (ma[x - 1, y]=="N") { ma[x - 2, y] = "P"; }
+                            if (ma[x - 1, y]=="N") { ma[x - 2, y] = "PE"; }
                             //derecha suma de fila
-                            if (ma[x, y + 1]=="N") { ma[x, y + 2] = "P"; }
+                            if (ma[x, y + 1]=="N") { ma[x, y + 2] = "PI"; }
                             //izquierda suma de fila
-                            if (ma[x, y - 1]=="N") { ma[x, y - 2] = "P"; }
+                            if (ma[x, y - 1]=="N") { ma[x, y - 2] = "PO"; }
 
                         }
                         else { }
@@ -454,13 +587,13 @@ namespace otello
 
                         {
                             //arriba suma de fila
-                            if (ma[x + 1, y] == "B") { ma[x + 2, y] = "P"; }
+                            if (ma[x + 1, y] == "B") { ma[x + 2, y] = "PA"; }
                             //abajo suma de fila
-                            if (ma[x - 1, y] == "B") { ma[x - 2, y] = "P"; }
+                            if (ma[x - 1, y] == "B") { ma[x - 2, y] = "PE"; }
                             //derecha suma de fila
-                            if (ma[x, y + 1] == "B") { ma[x, y + 2] = "P"; }
+                            if (ma[x, y + 1] == "B") { ma[x, y + 2] = "PI"; }
                             //izquierda suma de fila
-                            if (ma[x, y - 1] == "B") { ma[x, y - 2] = "P"; }
+                            if (ma[x, y - 1] == "B") { ma[x, y - 2] = "PO"; }
 
                         }
                         else { }
@@ -470,13 +603,8 @@ namespace otello
         }
 
 
-
-
         public void tabla1()
         {
-           
-
-
             if (colorturno == "blanco")
             {
                 for (int x = 0; x < 9; x++)
@@ -487,22 +615,48 @@ namespace otello
 
                         {
                             //arriba suma de fila
-                            if (ma[x + 1, y] == "N") { ma[x + 2, y] = "P"; }
+                            if (ma[x + 1, y] == "N") {
+                                for (int z = x; z < 9; z++)
+                                {
+                                    if (ma[z, y] == " "&& ma[z-1, y] == "N") { ma[z, y] = "PA"; z = 9;
+                                        a = true;
+                                    }
+                                }
+                            }
+
                             //abajo suma de fila
-                            if (ma[x - 1, y] == "N") { ma[x - 2, y] = "P"; }
+                            if (ma[x - 1, y] == "N") {
+                                for (int z = x; z>0; z--)
+                                {
+                                    if (ma[z, y] == " " && ma[z +1, y] == "N") { ma[z, y] = "PE"; z = 0; b = true; }
+                                }
+                            }
+
+
                             //derecha suma de fila
-                            if (ma[x, y + 1] == "N") { ma[x, y + 2] = "P"; }
+                            if (ma[x, y + 1] == "N") {
+                                for (int z = y; z < 9; z++)
+                                {
+                                    if (ma[x, z] == " " && ma[x, z-1] == "N") { ma[x, z] = "PI"; z = 9; c = true; }
+                                }
+                            }
                             //izquierda suma de fila
-                            if (ma[x, y - 1] == "N") { ma[x, y - 2] = "P"; }
+                            if (ma[x, y - 1] == "N") {
+                                for (int z = y;z>0; z--)
+                                {
+                                    if (ma[x, z] == " " && ma[x, z + 1] == "N") { ma[x, z] = "PO"; z = 0; d = true; }
+                                }
+                            }
 
                         }
-                        else { }
+                        
                     }
                 }
             }
 
             if (colorturno == "negro")
             {
+
                 for (int x = 0; x < 9; x++)
                 {
                     for (int y = 0; y < 9; y++)
@@ -511,23 +665,52 @@ namespace otello
 
                         {
                             //arriba suma de fila
-                            if (ma[x + 1, y] == "B") { ma[x + 2, y] = "P"; }
+                            if (ma[x + 1, y] == "B")
+                            {
+                                for (int z = x; z < 9; z++)
+                                {
+                                    if (ma[z, y] == " " && ma[z - 1, y] == "B")
+                                    {
+                                        ma[z, y] = "PA"; z = 9;
+                                        a = true;
+                                    }
+                                }
+                            }
+
                             //abajo suma de fila
-                            if (ma[x - 1, y] == "B") { ma[x - 2, y] = "P"; }
+                            if (ma[x - 1, y] == "B")
+                            {
+                                for (int z = x; z > 0; z--)
+                                {
+                                    if (ma[z, y] == " " && ma[z + 1, y] == "B") { ma[z, y] = "PE"; z = 0; b = true; }
+                                }
+                            }
+
+
                             //derecha suma de fila
-                            if (ma[x, y + 1] == "B") { ma[x, y + 2] = "P"; }
+                            if (ma[x, y + 1] == "B")
+                            {
+                                for (int z = y; z < 9; z++)
+                                {
+                                    if (ma[x, z] == " " && ma[x, z - 1] == "B") { ma[x, z] = "PI"; z = 9; c = true; }
+                                }
+                            }
                             //izquierda suma de fila
-                            if (ma[x, y - 1] == "B") { ma[x, y - 2] = "P"; }
+                            if (ma[x, y - 1] == "B")
+                            {
+                                for (int z = y; z > 0; z--)
+                                {
+                                    if (ma[x, z] == " " && ma[x, z + 1] == "B") { ma[x, z] = "PO"; z = 0; d = true; }
+                                }
+                            }
 
                         }
-                        else { }
+
                     }
                 }
+
             }
         }
-
-
-
 
 
         public void botones(string fila, string columna, string color)
@@ -2673,12 +2856,21 @@ namespace otello
 
         protected void Button2_Click1(object sender, EventArgs e)
         {
+            for (int z = 0; z < 9; z++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    ma[z, y] = " ";
+                }
+            }
+
             colorturno = "blanco";
             ma[4, 4] = "B";
             ma[5, 4] = "N";
             ma[4, 5] = "N";
             tabla(5, 5, "B");
             posibles();
+
         }
     }
 }
