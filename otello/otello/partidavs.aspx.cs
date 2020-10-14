@@ -9,7 +9,7 @@ namespace otello
     public partial class partidavs : System.Web.UI.Page
 
     {
-        public static string[,] ma = new string[9, 9];
+        public static string[,] ma = new string[10, 10];
         public static string colorito = "";
         public static string fila = "";
         public static string columna = "";
@@ -34,9 +34,17 @@ namespace otello
                 if (file != null && file.ContentLength > 0)
                 {
                     a10();
+                    mostrar();
+                    tabla1();
+                    posibles();
+
                 }
             }
         }
+        /// <summary>
+        /// comprender principio de arki
+        /// usar materiales mediante el principio
+        /// </summary>
 
         public void mostrar()
         {
@@ -286,165 +294,171 @@ namespace otello
         public void recorrer(int fila, int columna, string color)
         {
 
-            if (colorturno == "blanco")
-            {
-                
-
-                if (ma[fila, columna] == "PO") {
-                    
-
-                    for (int z = columna; z < 9; z++)
-                    {
-                        
-                        if (ma[fila, z] == "B")
-                        {
-                            z = 9; 
-                        }
-                        else { ma[fila, z] = "B"; }
-                        
-
-                    }
-                    ma[fila, columna] = color;
-                }
-
-                //abajo suma de fila
-                
-                if (ma[fila, columna] == "PI")
-                {
-                    
-                    for (int z = columna; z > 0; z--)
-                    {
-                        
-                        if (ma[fila, z] == "B")
-                        {
-                            z = 0;
-                        }
-                        else { ma[fila,z] = "B"; }
-                        
-                    }
-                    ma[fila, columna] = color;
-                }
-
-
-
-                //derecha suma de fila
-
-                if (ma[fila, columna] == "PE")
-                {
-                    
-                    for (int z = fila; z < 9; z++)
-                    {
-                        
-                        if (ma[z,columna] == "B")
-                        {
-                            z = 9; //ma[5, 4] = "B";
-                        }
-                        else { ma[z, columna] = "B"; }
-                        
-                    }
-                    ma[fila, columna] = color;
-                }
-
-                //izquierda suma de fil
-                if (ma[fila, columna] == "PA")
-                {
-                    
-                    for (int z = fila; z > 0; z--)
-                    {
-                        
-                        if (ma[z, columna] == "B")
-                        {
-                            z = 0; 
-                        }
-                        else { ma[z, columna] = "B"; }
-                        
-                    }
-                    ma[fila, columna] = color;
-                }
-
-
-
-            }
-
-            if (colorturno == "negro")
-            {
-                if (ma[fila, columna] == "PO")
+            
+            
+                if (colorturno == "blanco")
                 {
 
 
-                    for (int z = columna; z < 9; z++)
+                    if (ma[fila, columna] == "PO")
                     {
 
-                        if (ma[fila, z] == "N")
+
+                        for (int z = columna; z < 9; z++)
                         {
-                            z = 9;
+
+                            if (ma[fila, z] == "B")
+                            {
+                                z = 9;
+                            }
+                            else { ma[fila, z] = "B"; }
+
+
                         }
-                        else { ma[fila, z] = "N"; }
-
-
+                        ma[fila, columna] = color;
                     }
-                    ma[fila, columna] = color;
+
+                    //abajo suma de fila
+
+                    if (ma[fila, columna] == "PI")
+                    {
+
+                        for (int z = columna; z > 0; z--)
+                        {
+
+                            if (ma[fila, z] == "B")
+                            {
+                                z = 0;
+                            }
+                            else { ma[fila, z] = "B"; }
+
+                        }
+                        ma[fila, columna] = color;
+                    }
+
+
+
+                    //derecha suma de fila
+
+                    if (ma[fila, columna] == "PE")
+                    {
+
+                        for (int z = fila; z < 9; z++)
+                        {
+
+                            if (ma[z, columna] == "B")
+                            {
+                                z = 9; //ma[5, 4] = "B";
+                            }
+                            else { ma[z, columna] = "B"; }
+
+                        }
+                        ma[fila, columna] = color;
+                    }
+
+                    //izquierda suma de fil
+                    if (ma[fila, columna] == "PA")
+                    {
+
+                        for (int z = fila; z > 0; z--)
+                        {
+
+                            if (ma[z, columna] == "B")
+                            {
+                                z = 0;
+                            }
+                            else { ma[z, columna] = "B"; }
+
+                        }
+                        ma[fila, columna] = color;
+                    }
+
+
+
                 }
 
-                //abajo suma de fila
-
-                if (ma[fila, columna] == "PI")
+                if (colorturno == "negro")
                 {
-
-                    for (int z = columna; z > 0; z--)
+                    if (ma[fila, columna] == "PO")
                     {
 
-                        if (ma[fila, z] == "N")
+
+                        for (int z = columna; z < 9; z++)
                         {
-                            z = 0;
+
+                            if (ma[fila, z] == "N")
+                            {
+                                z = 9;
+                            }
+                            else { ma[fila, z] = "N"; }
+
+
                         }
-                        else { ma[fila, z] = "N"; }
-
+                        ma[fila, columna] = color;
                     }
-                    ma[fila, columna] = color;
-                }
 
-                //derecha suma de fila
-                //derecha suma de fila
-                //derecha suma de fila
+                    //abajo suma de fila
 
-                if (ma[fila, columna] == "PE")
-                {
-
-                    for (int z = fila; z < 9; z++)
+                    if (ma[fila, columna] == "PI")
                     {
 
-                        if (ma[z, columna] == "N")
+                        for (int z = columna; z > 0; z--)
                         {
-                            z = 9; //ma[5, 4] = "B";
+
+                            if (ma[fila, z] == "N")
+                            {
+                                z = 0;
+                            }
+                            else { ma[fila, z] = "N"; }
+
                         }
-                        else { ma[z, columna] = "N"; }
-
+                        ma[fila, columna] = color;
                     }
-                    ma[fila, columna] = color;
-                }
 
-                //izquierda suma de fil
-                if (ma[fila, columna] == "PA")
-                {
+                    //derecha suma de fila
+                    //derecha suma de fila
+                    //derecha suma de fila
 
-                    for (int z = fila; z > 0; z--)
+                    if (ma[fila, columna] == "PE")
                     {
 
-                        if (ma[z, columna] == "N")
+                        for (int z = fila; z < 9; z++)
                         {
-                            z = 0;
+
+                            if (ma[z, columna] == "N")
+                            {
+                                z = 9; //ma[5, 4] = "B";
+                            }
+                            else { ma[z, columna] = "N"; }
+
                         }
-                        else { ma[z, columna] = "N"; }
-
+                        ma[fila, columna] = color;
                     }
-                    ma[fila, columna] = color;
+
+                    //izquierda suma de fil
+                    if (ma[fila, columna] == "PA")
+                    {
+
+                        for (int z = fila; z > 0; z--)
+                        {
+
+                            if (ma[z, columna] == "N")
+                            {
+                                z = 0;
+                            }
+                            else { ma[z, columna] = "N"; }
+
+                        }
+                        ma[fila, columna] = color;
+                    }
+
+
+
+
                 }
+            
 
 
-
-
-            }
 
             for (int x = 0; x < 9; x++)
             {
@@ -468,9 +482,29 @@ namespace otello
 
         }
 
+        public void resultado() {
+            int b1 = 0;
+            int b2 = 0;
+            for (int z = 0; z < 9; z++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if(ma[z, y] == "B"){ b1++; }
+                    if (ma[z, y] == "N") { b2++; }
+                }
+            }
+            if (b1<b2) { Response.Write("<scrip>window.alert('ha Ganado negro')</script>"); }
+            if (b1 == b2) { Response.Write("<scrip>window.alert('esto es empate')</script>"); }
+            if (b1 > b2) { Response.Write("<scrip>window.alert('ha Ganado blanco')</script>"); }
+
+
+
+        }
+
 
         public void posibles()
         {
+            Boolean yy = false;
                 for (int x = 1; x < 9; x++)
                 {
                     for (int y = 1; y < 9; y++)
@@ -549,9 +583,13 @@ namespace otello
                         if (ma[x, y] == ma[8, 6]) { h06.BackColor = System.Drawing.Color.Red; }
                         if (ma[x, y] == ma[8, 7]) { h07.BackColor = System.Drawing.Color.Red; }
                         if (ma[x, y] == ma[8, 8]) { h08.BackColor = System.Drawing.Color.Red; }
-
+                        yy = true;
                     }
-                    else { }    
+                    else {  }
+
+                    if (yy == true) {
+                        resultado(); yy = false;
+                    }
                     
 
 
@@ -620,6 +658,7 @@ namespace otello
         {
             if (colorturno == "blanco")
             {
+                
                 for (int x = 0; x < 9; x++)
                 {
                     for (int y = 0; y < 9; y++)
@@ -627,8 +666,10 @@ namespace otello
                         if (ma[x, y] == "B")
 
                         {
+                            
                             //arriba suma de fila
                             if (ma[x + 1, y] == "N") {
+                           
                                 for (int z = x; z < 9; z++)
                                 {
                                     if (ma[z, y] == " "&& ma[z-1, y] == "N") { ma[z, y] = "PA"; z = 9;
@@ -776,6 +817,14 @@ namespace otello
 
         public void a10()
         {
+            for (int z = 0; z < 9; z++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    ma[z, y] = " ";
+                }
+            }
+
             string c = fUpload.FileName;
             string cadena = @"C:\Users\john\Desktop\ipc2\juego\juego_201710392\otello\otello\xml\" + c;
             XmlReader lectura = XmlReader.Create(cadena);
@@ -816,160 +865,160 @@ namespace otello
 
                 if ((colorito == "blanco"))
                 {
-                    if ((fila == "1") && (columna == "A")) { a01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "A")) { a02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "A")) { a03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "A")) { a04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "A")) { a05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "A")) { a06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "A")) { a07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "A")) { a08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "A")) { ma[1, 1] = "B"; a01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "A")) { ma[1, 2] = "B";  a02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "A")) { ma[1, 3] = "B"; a03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "A")) { ma[1, 4] = "B"; a04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "A")) { ma[1, 5] = "B"; a05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "A")) { ma[1, 6] = "B"; a06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "A")) { ma[1, 7] = "B"; a07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "A")) { ma[1, 8] = "B"; a08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "B")) { b01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "B")) { b02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "B")) { b03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "B")) { b04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "B")) { b05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "B")) { b06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "B")) { b07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "B")) { b08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "B")) { ma[2, 1] = "B"; b01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "B")) { ma[2, 2] = "B"; b02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "B")) { ma[2, 3] = "B"; b03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "B")) { ma[2, 4] = "B"; b04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "B")) { ma[2, 5] = "B"; b05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "B")) { ma[2, 6] = "B"; b06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "B")) { ma[2, 7] = "B"; b07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "B")) { ma[2, 8] = "B"; b08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "C")) { c1.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "C")) { c02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "C")) { c03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "C")) { c04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "C")) { c05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "C")) { c06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "C")) { c07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "C")) { c08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "C")) { ma[3, 1] = "B"; c1.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "C")) { ma[3, 2] = "B"; c02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "C")) { ma[3, 3] = "B"; c03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "C")) { ma[3, 4] = "B"; c04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "C")) { ma[3, 5] = "B"; c05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "C")) { ma[3, 6] = "B"; c06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "C")) { ma[3, 7] = "B"; c07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "C")) { ma[3, 8] = "B"; c08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "D")) { d01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "D")) { d02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "D")) { d03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "D")) { d04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "D")) { d05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "D")) { d06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "D")) { d07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "D")) { d08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "D")) { ma[4, 1] = "B"; d01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "D")) { ma[4, 2] = "B"; d02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "D")) { ma[4, 3] = "B"; d03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "D")) { ma[4, 4] = "B"; d04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "D")) { ma[4, 5] = "B"; d05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "D")) { ma[4, 6] = "B"; d06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "D")) { ma[4, 7] = "B"; d07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "D")) { ma[4, 8] = "B"; d08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "E")) { e01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "E")) { e02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "E")) { e03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "E")) { e04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "E")) { e05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "E")) { e06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "E")) { e07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "E")) { e08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "E")) { ma[5, 1] = "B"; e01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "E")) { ma[5, 2] = "B"; e02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "E")) { ma[5, 3] = "B"; e03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "E")) { ma[5, 4] = "B"; e04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "E")) { ma[5, 5] = "B"; e05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "E")) { ma[5, 6] = "B"; e06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "E")) { ma[5, 7] = "B"; e07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "E")) { ma[5, 8] = "B"; e08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "F")) { f01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "F")) { f02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "F")) { f03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "F")) { f04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "F")) { f05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "F")) { f06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "F")) { f07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "F")) { f08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "F")) { ma[6, 1] = "B"; f01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "F")) { ma[6, 2] = "B"; f02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "F")) { ma[6, 3] = "B"; f03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "F")) { ma[6, 4] = "B"; f04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "F")) { ma[6, 5] = "B"; f05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "F")) { ma[6, 6] = "B"; f06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "F")) { ma[6, 7] = "B"; f07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "F")) { ma[6, 8] = "B"; f08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "G")) { g01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "G")) { g02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "G")) { g03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "G")) { g04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "G")) { g05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "G")) { g06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "G")) { g07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "G")) { g08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "G")) { ma[7, 1] = "B"; g01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "G")) { ma[7, 2] = "B"; g02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "G")) { ma[7, 3] = "B"; g03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "G")) { ma[7, 4] = "B"; g04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "G")) { ma[7, 5] = "B"; g05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "G")) { ma[7, 6] = "B"; g06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "G")) { ma[7, 7] = "B"; g07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "G")) { ma[7, 8] = "B"; g08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "H")) { h01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "H")) { h02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "H")) { h03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "H")) { h04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "H")) { h05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "H")) { h06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "H")) { h07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "H")) { h08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "H")) { ma[8, 1] = "B"; h01.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "H")) { ma[8, 2] = "B"; h02.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "H")) { ma[8, 3] = "B"; h03.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "H")) { ma[8, 4] = "B"; h04.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "H")) { ma[8, 5] = "B"; h05.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "H")) { ma[8, 6] = "B"; h06.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "H")) { ma[8, 7] = "B"; h07.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "H")) { ma[8, 8] = "B"; h08.BackColor = System.Drawing.Color.White; colorito = ""; fila = ""; columna = ""; }
 
 
 
                 }
                 else
                 {
-                    if ((fila == "1") && (columna == "A")) { a01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "A")) { a02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "A")) { a03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "A")) { a04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "A")) { a05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "A")) { a06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "A")) { a07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "A")) { a08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "A")) { ma[1, 1] = "N"; a01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "A")) { ma[1, 2] = "N"; a02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "A")) { ma[1, 3] = "N"; a03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "A")) { ma[1, 4] = "N"; a04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "A")) { ma[1, 5] = "N"; a05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "A")) { ma[1, 6] = "N"; a06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "A")) { ma[1, 7] = "N"; a07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "A")) { ma[1, 8] = "N"; a08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "B")) { b01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "B")) { b02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "B")) { b03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "B")) { b04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "B")) { b05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "B")) { b06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "B")) { b07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "B")) { b08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "B")) { ma[2, 1] = "N"; b01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "B")) { ma[2, 2] = "N"; b02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "B")) { ma[2, 3] = "N"; b03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "B")) { ma[2, 4] = "N"; b04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "B")) { ma[2, 5] = "N"; b05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "B")) { ma[2, 6] = "N"; b06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "B")) { ma[2, 7] = "N"; b07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "B")) { ma[2, 8] = "N"; b08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "C")) { c1.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "C")) { c02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "C")) { c03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "C")) { c04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "C")) { c05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "C")) { c06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "C")) { c07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "C")) { c08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "C")) { ma[3, 1] = "N"; c1.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "C")) { ma[3, 2] = "N"; c02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "C")) { ma[3, 3] = "N"; c03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "C")) { ma[3, 4] = "N"; c04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "C")) { ma[3, 5] = "N"; c05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "C")) { ma[3, 6] = "N"; c06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "C")) { ma[3, 7] = "N"; c07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "C")) { ma[3, 8] = "N"; c08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "D")) { d01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "D")) { d02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "D")) { d03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "D")) { d04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "D")) { d05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "D")) { d06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "D")) { d07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "D")) { d08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "D")) { ma[4, 1] = "N"; d01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "D")) { ma[4, 2] = "N"; d02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "D")) { ma[4, 3] = "N"; d03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "D")) { ma[4, 4] = "N"; d04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "D")) { ma[4, 5] = "N"; d05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "D")) { ma[4, 6] = "N"; d06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "D")) { ma[4, 7] = "N"; d07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "D")) { ma[4, 8] = "N"; d08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "E")) { e01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "E")) { e02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "E")) { e03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "E")) { e04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "E")) { e05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "E")) { e06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "E")) { e07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "E")) { e08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "E")) { ma[5, 1] = "N"; e01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "E")) { ma[5, 2] = "N"; e02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "E")) { ma[5, 3] = "N"; e03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "E")) { ma[5, 4] = "N"; e04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "E")) { ma[5, 5] = "N"; e05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "E")) { ma[5, 6] = "N"; e06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "E")) { ma[5, 7] = "N"; e07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "E")) { ma[5, 8] = "N"; e08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "F")) { f01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "F")) { f02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "F")) { f03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "F")) { f04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "F")) { f05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "F")) { f06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "F")) { f07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "F")) { f08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "F")) { ma[6, 1] = "N"; f01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "F")) { ma[6, 2] = "N"; f02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "F")) { ma[6, 3] = "N"; f03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "F")) { ma[6, 4] = "N"; f04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "F")) { ma[6, 5] = "N"; f05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "F")) { ma[6, 6] = "N"; f06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "F")) { ma[6, 7] = "N"; f07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "F")) { ma[6, 8] = "N"; f08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "G")) { g01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "G")) { g02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "G")) { g03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "G")) { g04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "G")) { g05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "G")) { g06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "G")) { g07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "G")) { g08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "G")) { ma[7, 1] = "N"; g01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "G")) { ma[7, 2] = "N"; g02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "G")) { ma[7, 3] = "N"; g03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "G")) { ma[7, 4] = "N"; g04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "G")) { ma[7, 5] = "N"; g05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "G")) { ma[7, 6] = "N"; g06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "G")) { ma[7, 7] = "N"; g07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "G")) { ma[7, 8] = "N"; g08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
 
-                    if ((fila == "1") && (columna == "H")) { h01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "2") && (columna == "H")) { h02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "3") && (columna == "H")) { h03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "4") && (columna == "H")) { h04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "5") && (columna == "H")) { h05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "6") && (columna == "H")) { h06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "7") && (columna == "H")) { h07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
-                    if ((fila == "8") && (columna == "H")) { h08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "1") && (columna == "H")) { ma[8, 1] = "N"; h01.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "2") && (columna == "H")) { ma[8, 2] = "N"; h02.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "3") && (columna == "H")) { ma[8, 3] = "N"; h03.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "4") && (columna == "H")) { ma[8, 4] = "N"; h04.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "5") && (columna == "H")) { ma[8, 5] = "N"; h05.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "6") && (columna == "H")) { ma[8, 6] = "N"; h06.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "7") && (columna == "H")) { ma[8, 7] = "N"; h07.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
+                    if ((fila == "8") && (columna == "H")) { ma[8, 8] = "N"; h08.BackColor = System.Drawing.Color.Black; colorito = ""; fila = ""; columna = ""; }
                 }
 
-
+               
             }
 
-
+            
 
 
         }
@@ -2877,7 +2926,7 @@ namespace otello
                 }
             }
 
-            colorturno = "blanco";
+            colorturno = "negro";
             ma[4, 4] = "B";
             ma[5, 4] = "N";
             ma[4, 5] = "N";
