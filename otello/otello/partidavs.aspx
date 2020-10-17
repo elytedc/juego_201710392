@@ -41,28 +41,6 @@
         
 
 
-        .auto-style1 {
-            
-            border: 2px solid #ffffff;
-            border-radius: 200px;
-            color: #fff;
-            font-size: 28px;
-            font-weight: bold;
-            padding: 5px 15px;
-            position: absolute;
-            top: 331px;
-            margin-left: 10px;
-            width: 35px;
-            height: 35px;
-            left: 255px;
-            right: 753px;
-            bottom: 92px;
-            background-color: #FFFFFF;
-        }
-
-        
-
-
         .auto-style3 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -662,22 +640,6 @@
         
 
 
-        .auto-style2 {
-            border: 2px solid #ffffff;
-            border-radius: 200px;
-            color: #fff;
-            font-size: 28px;
-            font-weight: bold;
-            padding: 5px 15px;
-            position: absolute;
-            top: 335px;
-            margin-left: 10px;
-            width: 35px;
-            height: 35px;
-            left: 321px;
-            background-color: #000000;
-            bottom: 170px;
-        }
         .auto-style29 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -1097,6 +1059,43 @@
         
 
 
+        .auto-style75 {
+            border: 2px solid #ffffff;
+            border-radius: 200px;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 5px 15px;
+            position: absolute;
+            top: 332px;
+            margin-left: 10px;
+            width: 35px;
+            height: 35px;
+            left: 256px;
+            right: 642px;
+            bottom: 407px;
+            background-color: #FFFFFF;
+        }
+        .auto-style76 {
+            border: 2px solid #ffffff;
+            border-radius: 200px;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 5px 15px;
+            position: absolute;
+            top: 330px;
+            margin-left: 10px;
+            width: 35px;
+            height: 33px;
+            left: 320px;
+            background-color: #000000;
+            bottom: 291px;
+        }
+
+        
+
+
         </style>
 </head>
 <body>
@@ -1108,13 +1107,14 @@
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PARTIDA INDIVIDUAL</p>
             <p>
-                &nbsp;</p> 
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            </p> 
             <p>
                 &nbsp;</p>
             <p>
                 <asp:Image ID="Image1" runat="server" Height="425px" ImageUrl="~/ima/fonfo.jpg" Width="599px" CssClass="auto-style73" />
                 <asp:Button ID="c08" runat="server" CssClass="auto-style20" Text="" BorderColor="#009D0E" OnClick="c08_Click" />
-                <asp:Button ID="d04" runat="server" CssClass="auto-style1" Text="" BorderColor="#009D0E" OnClick="d04_Click" />
+                <asp:Button ID="d04" runat="server" CssClass="auto-style75" Text="" BorderColor="#009D0E" OnClick="d04_Click" />
                 <asp:Button ID="d05" runat="server" CssClass="auto-style3" Text="" BorderColor="#009D0E" OnClick="d05_Click" />
                 <asp:Button ID="e03" runat="server" CssClass="auto-style45" Text="" BorderColor="#009D0E" OnClick="e03_Click" />
                 <asp:Button ID="d06" runat="server" CssClass="auto-style25" Text="" BorderColor="#009D0E" OnClick="d06_Click" />
@@ -1151,7 +1151,6 @@
                 <asp:Button ID="c07" runat="server" CssClass="auto-style17" Text="" BorderColor="#009D0E" OnClick="c07_Click" />
                 <asp:Button ID="h07" runat="server" CssClass="auto-style18" Text="" BorderColor="#009D0E" OnClick="h07_Click" />
                 <asp:Button ID="d03" runat="server" CssClass="auto-style44" Text="" BorderColor="#009D0E" OnClick="d03_Click" />
-                <asp:Button ID="e04" runat="server" CssClass="auto-style2" Text="" BorderColor="#009D0E" OnClick="e04_Click" />
                 <asp:Button ID="f04" runat="server" CssClass="auto-style29" Text="" BorderColor="#009D0E" OnClick="f04_Click" />
                 <asp:Button ID="a04" runat="server" CssClass="auto-style35" Text="" BorderColor="#009D0E" OnClick="a04_Click" />
                 <asp:Button ID="g04" runat="server" CssClass="auto-style48" Text="" BorderColor="#009D0E" OnClick="g04_Click" />
@@ -1190,10 +1189,18 @@
 &nbsp; LIMPIAR:
                 <asp:Button ID="B" runat="server" CssClass="auto-style72" Height="20px" Width="44px" OnClick="B_Click" />
             &nbsp;
-                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="Button" />
+                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click1" Text="INICIAR" />
             </p>
             <p>
-                &nbsp;</p>&nbsp;<br />
+                ELIJA SU COLOR INVITADO:
+                <asp:Button ID="e04" runat="server" CssClass="auto-style76" Text="" BorderColor="#009D0E" OnClick="e04_Click" />
+                <asp:Button ID="d9" runat="server" OnClick="d9_Click1" Text="BLANCO" />
+                <asp:Button ID="e9" runat="server" OnClick="e9_Click" Text="NEGRO" />
+            </p>
+            <p>
+                &nbsp;</p>
+            <br />
+            &nbsp;<br />
             <br />
             <br />
                 

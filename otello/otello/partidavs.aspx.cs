@@ -2,6 +2,10 @@
 using System.Xml;
 using System.Xml.Linq;
 using System.Collections;
+using System.Web.UI.WebControls;
+using System.Windows.Forms;
+using System.Windows.Controls;
+
 
 namespace otello
 
@@ -15,11 +19,11 @@ namespace otello
         public static string columna = "";
         public static string estado = "falso";
         public static string colorturno = "";
+        public static string colorlogeado = "";
         public static int con = 1;
-        public static Boolean a = true;
-        public static Boolean b = true;
-        public static Boolean c = true;
-        public static Boolean d = true;
+        public static string yy = "x";
+        public static int b = 0;
+        public static int n = 0;
 
 
         public object FlatStyle { get; private set; }
@@ -41,10 +45,7 @@ namespace otello
                 }
             }
         }
-        /// <summary>
-        /// comprender principio de arki
-        /// usar materiales mediante el principio
-        /// </summary>
+    
 
         public void mostrar()
         {
@@ -373,11 +374,47 @@ namespace otello
                         ma[fila, columna] = color;
                     }
 
+                if (ma[fila, columna] == "MA")
+                {
+                    int v = columna;
 
+                    for (int z = fila; z < 9; z++)
+                    {
 
+                        if (ma[z, v] == "B")
+                        {
+                            z = 9; //ma[5, 4] = "B";
+                        }
+                        else { ma[z, v] = "B"; }
+                        v--;
+                        if (v < 1) { break; }
+                    }
+                    ma[fila, columna] = color;
                 }
 
-                if (colorturno == "negro")
+                //izquierda suma de fil
+                if (ma[fila, columna] == "ME")
+                {
+                    int v = columna;
+                    for (int z = fila; z > 0; z--)
+                    {
+
+                        if (ma[z, v] == "B")
+                        {
+                            z = 0;
+                        }
+                        else { ma[z, v] = "B"; }
+                        v++;
+                        if (v > 8) { break; }
+                    }
+                    ma[fila, columna] = color;
+                }
+
+
+
+            }
+
+            if (colorturno == "negro")
                 {
                     if (ma[fila, columna] == "PO")
                     {
@@ -452,11 +489,45 @@ namespace otello
                         ma[fila, columna] = color;
                     }
 
+                if (ma[fila, columna] == "MA")
+                {
+                    int v = columna;
 
+                    for (int z = fila; z < 9; z++)
+                    {
 
+                        if (ma[z, v] == "N")
+                        {
+                            z = 9; //ma[5, 4] = "B";
+                        }
+                        else { ma[z,v] = "N"; }
+                        v--;
+                        if (v < 1) { break; }
 
+                    }
+                    ma[fila, columna] = color;
                 }
-            
+
+                //izquierda suma de fil
+                if (ma[fila, columna] == "ME")
+                {
+                    int v = columna;
+                    for (int z = fila; z > 0; z--)
+                    {
+
+                        if (ma[z, v] == "N")
+                        {
+                            z = 0;
+                        }
+                        else { ma[z, v] = "N"; }
+                        v++;
+                        if (v >8) { break; }
+                    }
+                    ma[fila, columna] = color;
+                }
+
+            }
+
 
 
 
@@ -464,7 +535,7 @@ namespace otello
             {
                 for (int y = 0; y < 9; y++)
                 {
-                    if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO")
+                    if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO" || ma[x, y] == "MA" || ma[x, y] == "ME" || ma[x, y] == "MI" || ma[x, y] == "MO")
                     {
                         ma[x, y] = " ";
                     }
@@ -472,17 +543,14 @@ namespace otello
                 }
             }
 
-            a = false;
-            b = false;
-            c = false;
-            d = false;
-
+           
 
 
 
         }
 
         public void resultado() {
+            sincronizar p = new sincronizar();
             int b1 = 0;
             int b2 = 0;
             for (int z = 0; z < 9; z++)
@@ -493,9 +561,21 @@ namespace otello
                     if (ma[z, y] == "N") { b2++; }
                 }
             }
-            if (b1<b2) { Response.Write("<scrip>window.alert('ha Ganado negro')</script>"); }
-            if (b1 == b2) { Response.Write("<scrip>window.alert('esto es empate')</script>"); }
-            if (b1 > b2) { Response.Write("<scrip>window.alert('ha Ganado blanco')</script>"); }
+            if (b1<b2) { Response.Write("<scrip>window.alert('ha Ganado negro')</script>");
+                if(colorlogeado=="negro") { p.insertar_partida("JUGADOR VS INVITADO", "GANADO"); }
+                else{ p.insertar_partida("JUGADOR VS INVITADO", "PERDIO"); }
+
+
+            }
+            if (b1 == b2) { Response.Write("<scrip>window.alert('esto es empate')</script>");
+                if (colorlogeado == "negro") { p.insertar_partida("JUGADOR VS INVITADO", "empate"); }
+                else { p.insertar_partida("JUGADOR VS INVITADO", "empate"); }
+            }
+            if (b1 > b2) {
+                Response.Write("<scrip>window.alert('ha Ganado blanco')</script>");
+                    if (colorlogeado == "negro") { p.insertar_partida("JUGADOR VS INVITADO", "PERDIO"); }
+                    else { p.insertar_partida("JUGADOR VS INVITADO", "GANO"); }
+            }
 
 
 
@@ -504,107 +584,136 @@ namespace otello
 
         public void posibles()
         {
-            Boolean yy = false;
-                for (int x = 1; x < 9; x++)
+            int a = 0;
+            for (int x1 = 0; x1 < 9; x1++)
+            {
+                for (int y1 = 0; y1 < 9; y1++)
                 {
-                    for (int y = 1; y < 9; y++)
+                    if (ma[x1, y1] == " ")
                     {
-                    if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO")
-
-                    {
-                        if (ma[x, y] == ma[1, 1]) { a01.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[1, 2]) { a02.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[1, 3]) { a03.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[1, 4]) { a04.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[1, 5]) { a05.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[1, 6]) { a06.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[1, 7]) { a07.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[1, 8]) { a08.BackColor = System.Drawing.Color.Red; }
-
-                        if (ma[x, y] == ma[2, 1]) { b01.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[2, 2]) { b02.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[2, 3]) { b03.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[2, 4]) { b04.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[2, 5]) { b05.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[2, 6]) { b06.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[2, 7]) { b07.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[2, 8]) { b08.BackColor = System.Drawing.Color.Red; }
-
-                        if (ma[x, y] == ma[3, 1]) { c1.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[3, 2]) { c02.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[3, 3]) { c03.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[3, 4]) { c04.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[3, 5]) { c05.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[3, 6]) { c06.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[3, 7]) { c07.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[3, 8]) { c08.BackColor = System.Drawing.Color.Red; }
-
-                        if (ma[x, y] == ma[4, 1]) { d01.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[4, 2]) { d02.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[4, 3]) { d03.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[4, 4]) { d04.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[4, 5]) { d05.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[4, 6]) { d06.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[4, 7]) { d07.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[4, 8]) { d08.BackColor = System.Drawing.Color.Red; }
-
-                        if (ma[x, y] == ma[5, 1]) { e01.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[5, 2]) { e02.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[5, 3]) { e03.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[5, 4]) { e04.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[5, 5]) { e05.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[5, 6]) { e06.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[5, 7]) { e07.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[5, 8]) { e08.BackColor = System.Drawing.Color.Red; }
-
-                        if (ma[x, y] == ma[6, 1]) { f01.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[6, 2]) { f02.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[6, 3]) { f03.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[6, 4]) { f04.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[6, 5]) { f05.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[6, 6]) { f06.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[6, 7]) { f07.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[6, 8]) { f08.BackColor = System.Drawing.Color.Red; }
-
-                        if (ma[x, y] == ma[7, 1]) { g01.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[7, 2]) { g02.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[7, 3]) { g03.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[7, 4]) { g04.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[7, 5]) { g05.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[7, 6]) { g06.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[7, 7]) { g07.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[7, 8]) { g08.BackColor = System.Drawing.Color.Red; }
-
-                        if (ma[x, y] == ma[8, 1]) { h01.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[8, 2]) { h02.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[8, 3]) { h03.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[8, 4]) { h04.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[8, 5]) { h05.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[8, 6]) { h06.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[8, 7]) { h07.BackColor = System.Drawing.Color.Red; }
-                        if (ma[x, y] == ma[8, 8]) { h08.BackColor = System.Drawing.Color.Red; }
-                        yy = true;
+                        yy = "a";
                     }
-                    else {  }
-
-                    if (yy == true) {
-                        resultado(); yy = false;
-                    }
-                    
-
 
                 }
-                }
+            }
 
+            if (yy == "x")
+            {
+                resultado();
+
+            }
+
+            else { 
             
-        }
+            for (int x = 1; x < 9; x++)
+            {
+                for (int y = 1; y < 9; y++)
+                {
+                        if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO" || ma[x, y] == "MA" || ma[x, y] == "ME" || ma[x, y] == "MI" || ma[x, y] == "MO")
 
+                        {
+                            if (ma[x, y] == ma[1, 1]) { a01.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[1, 2]) { a02.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[1, 3]) { a03.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[1, 4]) { a04.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[1, 5]) { a05.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[1, 6]) { a06.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[1, 7]) { a07.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[1, 8]) { a08.BackColor = System.Drawing.Color.Red; }
+
+                            if (ma[x, y] == ma[2, 1]) { b01.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[2, 2]) { b02.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[2, 3]) { b03.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[2, 4]) { b04.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[2, 5]) { b05.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[2, 6]) { b06.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[2, 7]) { b07.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[2, 8]) { b08.BackColor = System.Drawing.Color.Red; }
+
+                            if (ma[x, y] == ma[3, 1]) { c1.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[3, 2]) { c02.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[3, 3]) { c03.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[3, 4]) { c04.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[3, 5]) { c05.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[3, 6]) { c06.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[3, 7]) { c07.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[3, 8]) { c08.BackColor = System.Drawing.Color.Red; }
+
+                            if (ma[x, y] == ma[4, 1]) { d01.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[4, 2]) { d02.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[4, 3]) { d03.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[4, 4]) { d04.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[4, 5]) { d05.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[4, 6]) { d06.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[4, 7]) { d07.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[4, 8]) { d08.BackColor = System.Drawing.Color.Red; }
+
+                            if (ma[x, y] == ma[5, 1]) { e01.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[5, 2]) { e02.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[5, 3]) { e03.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[5, 4]) { e04.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[5, 5]) { e05.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[5, 6]) { e06.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[5, 7]) { e07.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[5, 8]) { e08.BackColor = System.Drawing.Color.Red; }
+
+                            if (ma[x, y] == ma[6, 1]) { f01.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[6, 2]) { f02.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[6, 3]) { f03.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[6, 4]) { f04.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[6, 5]) { f05.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[6, 6]) { f06.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[6, 7]) { f07.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[6, 8]) { f08.BackColor = System.Drawing.Color.Red; }
+
+                            if (ma[x, y] == ma[7, 1]) { g01.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[7, 2]) { g02.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[7, 3]) { g03.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[7, 4]) { g04.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[7, 5]) { g05.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[7, 6]) { g06.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[7, 7]) { g07.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[7, 8]) { g08.BackColor = System.Drawing.Color.Red; }
+
+                            if (ma[x, y] == ma[8, 1]) { h01.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[8, 2]) { h02.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[8, 3]) { h03.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[8, 4]) { h04.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[8, 5]) { h05.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[8, 6]) { h06.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[8, 7]) { h07.BackColor = System.Drawing.Color.Red; }
+                            if (ma[x, y] == ma[8, 8]) { h08.BackColor = System.Drawing.Color.Red; }
+                            a++;
+                        }
+                       
+                        
+                    }
+
+            }
+
+                if (a == 0)
+                {
+
+                    if (colorturno == "negro") { //colorturno = "blanco"; 
+                    }
+                    else { //colorturno = "negro"; 
+                        }
+                    Label1.Text = "error no puede, precione cualquier boton para continiar " + colorturno;
+
+
+                }
+            }
+
+
+            yy = "x";
+
+        }
 
         public void tabla(int fila, int columna,string color)
         {
             ma[fila, columna] = color;
 
-
+            Label1.Text = "LE TOCA A: " + colorturno;
             if (colorturno=="blanco") {
                 for (int x = 0; x < 9; x++)
                 {
@@ -653,12 +762,68 @@ namespace otello
             }
         }
 
-
         public void tabla1()
         {
+            
+            Label1.Text = "LE TOCA A: " + colorturno;
             if (colorturno == "blanco")
             {
-                
+                b = 0;
+                for (int x = 0; x < 9; x++)
+                {
+                    for (int y = 0; y < 9; y++)
+                    {
+                            if (ma[x, y] == "B")
+
+                            {
+
+                                //arriba suma de fila
+                                if (ma[x + 1, y] == "N")
+                                {
+
+                                    for (int z = x; z < 9; z++)
+                                    {
+                                        if (ma[z, y] == " " && ma[z - 1, y] == "N")
+                                        {
+                                            ma[z, y] = "PA"; z = 9;
+                                            b++;
+                                        }
+                                    }
+                                }
+
+                                //abajo suma de fila
+                                if (ma[x - 1, y] == "N")
+                                {
+                                    for (int z = x; z > 0; z--)
+                                    {
+                                        if (ma[z, y] == " " && ma[z + 1, y] == "N") { ma[z, y] = "PE"; z = 0; b++; }
+                                    }
+                                }
+
+
+                                //derecha suma de fila
+                                if (ma[x, y + 1] == "N")
+                                {
+                                    for (int z = y; z < 9; z++)
+                                    {
+                                        if (ma[x, z] == " " && ma[x, z - 1] == "N") { ma[x, z] = "PI"; z = 9; b++; }
+                                    }
+                                }
+                                //izquierda suma de fila
+                                if (ma[x, y - 1] == "N")
+                                {
+                                    for (int z = y; z > 0; z--)
+                                    {
+                                        if (ma[x, z] == " " && ma[x, z + 1] == "N") { ma[x, z] = "PO"; z = 0; b++; }
+                                    }
+                                }
+
+                            
+                        }
+
+                    }
+                }
+
                 for (int x = 0; x < 9; x++)
                 {
                     for (int y = 0; y < 9; y++)
@@ -666,50 +831,105 @@ namespace otello
                         if (ma[x, y] == "B")
 
                         {
-                            
-                            //arriba suma de fila
-                            if (ma[x + 1, y] == "N") {
-                           
-                                for (int z = x; z < 9; z++)
+                            //diaagonal 1  IZQUIERDA INFERIOR
+                            if (ma[x - 1, y + 1] == "N")
+                            {
+                                for (int z = x; z > 0; z--)
                                 {
-                                    if (ma[z, y] == " "&& ma[z-1, y] == "N") { ma[z, y] = "PA"; z = 9;
-                                        a = true;
+                                    if (ma[z, y] == " " && ma[z + 1, y - 1] == "N")
+                                    {
+                                        ma[z, y] = "MA"; z = 0; b++;
                                     }
+                                    y++;
+                                    if (y > 8) { break; }
                                 }
                             }
 
-                            //abajo suma de fila
-                            if (ma[x - 1, y] == "N") {
-                                for (int z = x; z>0; z--)
+                            //diaagonal 2 DERECHA SPERIOR
+                            if (ma[x + 1, y - 1] == "N")
+                            {
+                                for (int z = y; z > 0; z--)
                                 {
-                                    if (ma[z, y] == " " && ma[z +1, y] == "N") { ma[z, y] = "PE"; z = 0; b = true; }
+                                    if (ma[x, z] == " " && ma[x - 1, z + 1] == "N")
+                                    {
+                                        ma[x, z] = "ME"; z = 0; b++;
+                                    }
+                                    x++;
+                                    if (x > 8) { break; }
                                 }
                             }
 
+                           
 
-                            //derecha suma de fila
-                            if (ma[x, y + 1] == "N") {
-                                for (int z = y; z < 9; z++)
-                                {
-                                    if (ma[x, z] == " " && ma[x, z-1] == "N") { ma[x, z] = "PI"; z = 9; c = true; }
-                                }
-                            }
-                            //izquierda suma de fila
-                            if (ma[x, y - 1] == "N") {
-                                for (int z = y;z>0; z--)
-                                {
-                                    if (ma[x, z] == " " && ma[x, z + 1] == "N") { ma[x, z] = "PO"; z = 0; d = true; }
-                                }
-                            }
-
+                            
                         }
-                        
+
+
                     }
                 }
             }
 
+
             if (colorturno == "negro")
             {
+                n = 0;
+                for (int x = 0; x < 9; x++)
+                {
+                    for (int y = 0; y < 9; y++)
+                    {
+                            if (ma[x, y] == "N")
+
+                            {
+                                
+
+                                //arriba suma de fila
+                                if (ma[x + 1, y] == "B")
+                                {
+
+                                    for (int z = x; z < 9; z++)
+                                    {
+                                        if (ma[z, y] == " " && ma[z - 1, y] == "B")
+                                        {
+                                            ma[z, y] = "PA"; z = 9;
+                                            n++;
+                                        }
+                                    }
+                                }
+
+                                //abajo suma de fila
+                                if (ma[x - 1, y] == "B")
+                                {
+                                    for (int z = x; z > 0; z--)
+                                    {
+                                        if (ma[z, y] == " " && ma[z + 1, y] == "B") { ma[z, y] = "PE"; z = 0; n++; }
+                                    }
+                                }
+
+
+                                //derecha suma de fila
+                                if (ma[x, y + 1] == "B")
+                                {
+                                    for (int z = y; z < 9; z++)
+                                    {
+                                        if (ma[x, z] == " " && ma[x, z - 1] == "B") { ma[x, z] = "PI"; z = 9; n++; }
+                                    }
+                                }
+                                //izquierda suma de fila
+                                if (ma[x, y - 1] == "B")
+                                {
+                                    for (int z = y; z > 0; z--)
+                                    {
+                                        if (ma[x, z] == " " && ma[x, z + 1] == "B") { ma[x, z] = "PO"; z = 0; n++; }
+                                    }
+                                }
+
+
+                            }
+                        }
+                   
+                }
+
+
 
                 for (int x = 0; x < 9; x++)
                 {
@@ -718,67 +938,67 @@ namespace otello
                         if (ma[x, y] == "N")
 
                         {
-                            //arriba suma de fila
-                            if (ma[x + 1, y] == "B")
-                            {
-                                for (int z = x; z < 9; z++)
-                                {
-                                    if (ma[z, y] == " " && ma[z - 1, y] == "B")
-                                    {
-                                        ma[z, y] = "PA"; z = 9;
-                                        a = true;
-                                    }
-                                }
-                            }
-
-                            //abajo suma de fila
-                            if (ma[x - 1, y] == "B")
+                            //diaagonal 1  IZQUIERDA INFERIOR
+                            if (ma[x - 1, y + 1] == "B")
                             {
                                 for (int z = x; z > 0; z--)
                                 {
-                                    if (ma[z, y] == " " && ma[z + 1, y] == "B") { ma[z, y] = "PE"; z = 0; b = true; }
+                                    if (ma[z, y] == " " && ma[z - 1, y + 1] == "B")
+                                    {
+                                        ma[z, y] = "MA"; z = 0; n++;
+                                    }
+                                    y++;
+                                    if (y >8) { break; }
                                 }
                             }
 
-
-                            //derecha suma de fila
-                            if (ma[x, y + 1] == "B")
-                            {
-                                for (int z = y; z < 9; z++)
-                                {
-                                    if (ma[x, z] == " " && ma[x, z - 1] == "B") { ma[x, z] = "PI"; z = 9; c = true; }
-                                }
-                            }
-                            //izquierda suma de fila
-                            if (ma[x, y - 1] == "B")
+                            //diaagonal 2 DERECHA SPERIOR
+                            if (ma[x + 1, y - 1] == "B")
                             {
                                 for (int z = y; z > 0; z--)
                                 {
-                                    if (ma[x, z] == " " && ma[x, z + 1] == "B") { ma[x, z] = "PO"; z = 0; d = true; }
+                                    if (ma[x, z] == " " && ma[x - 1, z + 1] == "B")
+                                    {
+                                        ma[x, z] = "ME"; z = 0; n++;
+                                    }
+                                    x++;
+                                    if (x>8) { break; }
                                 }
                             }
 
-                        }
 
+                        }
                     }
+
                 }
 
             }
+
+            
+            
+
+            if (b == 0 && n == 0)
+            {
+                resultado();
+            }
+
         }
 
 
         public void botones(string fila, string columna, string color)
         {
+            
 
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+ 
         }
 
         protected void a01_Click(object sender, EventArgs e)
         {
+            
             if (colorturno == "blanco") { a01.BackColor = System.Drawing.Color.White;
                 recorrer(1, 1, "B");
                 mostrar();
@@ -2895,7 +3115,13 @@ namespace otello
             h07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
             h08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
 
-
+            for (int z = 0; z < 9; z++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    ma[z, y] = " ";
+                }
+            }
         }
 
         protected void e05_Click(object sender, EventArgs e)
@@ -2926,13 +3152,67 @@ namespace otello
                 }
             }
 
-            colorturno = "negro";
             ma[4, 4] = "B";
             ma[5, 4] = "N";
             ma[4, 5] = "N";
             tabla(5, 5, "B");
+            for (int x1 = 0; x1 < 9; x1++)
+            {
+                for (int y1 = 0; y1 < 9; y1++)
+                {
+                    if (ma[x1, y1] == " ")
+                    {
+                        yy = "a";
+                    }
+
+                }
+            }
             posibles();
 
+        }
+
+       
+
+        protected void d9_Click1(object sender, EventArgs e)
+        {
+            colorturno = "blanco";
+
+            colorlogeado = "negro";
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO" || ma[x, y] == "MA" || ma[x, y] == "ME" || ma[x, y] == "MI" || ma[x, y] == "MO")
+                    {
+                        ma[x, y] = " ";
+                    }
+                    else { }
+                }
+            }
+            mostrar();
+            tabla1();
+            posibles();
+
+        }
+
+        protected void e9_Click(object sender, EventArgs e)
+        {
+            colorturno = "negro";
+            colorlogeado = "blanco";
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO" || ma[x, y] == "MA" || ma[x, y] == "ME" || ma[x, y] == "MI" || ma[x, y] == "MO")
+                    {
+                        ma[x, y] = " ";
+                    }
+                    else { }
+                }
+            }
+            mostrar();
+            tabla1();
+            posibles();
         }
     }
 }

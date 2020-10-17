@@ -51,6 +51,7 @@
         </span>
         <asp:Button ID="Button1" runat="server" Text="INICIAR" Width="212px" OnClick="Button1_Click" CssClass="auto-style3" />
         <asp:Button ID="Button2" runat="server" Text="REGISTRARCE" Width="174px" OnClick="Button2_Click" CssClass="auto-style3" />
+        &nbsp;
         <br class="auto-style1" />
     <p class="auto-style1">
         &nbsp;</p>

@@ -130,6 +130,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="partidasistema.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="menu.aspx.designer.cs">
       <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="partidasistema.aspx.cs">
+      <DependentUpon>partidasistema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="partidasistema.aspx.designer.cs">
+      <DependentUpon>partidasistema.aspx</DependentUpon>
     </Compile>
     <Compile Include="partidavs.aspx.cs">
       <DependentUpon>partidavs.aspx</DependentUpon>

@@ -6,7 +6,7 @@ namespace otello
 {
     public class sincronizar
     {
-
+        public static string name = "";
         public SqlConnection getTomos()
         {
 
@@ -36,9 +36,11 @@ namespace otello
 
         public bool buscar(string usuario, string contraseña)
         {
+            
             sincronizar bas = new sincronizar();
             try
             {
+                name = usuario;
                 string sql = "SELECT * FROM base_usuarios WHERE usuario = '" + usuario + "' AND contraseña = '" + contraseña + "'";
                 SqlCommand lectura = new SqlCommand(sql, bas.getTomos());
                 SqlDataAdapter sda = new SqlDataAdapter(lectura);
@@ -69,6 +71,26 @@ namespace otello
                 return false;
             }
         }
+
+
+        public bool insertar_partida(string tipo_partida, string reporte)
+        {
+            sincronizar bas = new sincronizar();
+            try
+            {
+                string sql = "Insert into partida values ('" + tipo_partida + "','" + reporte + "','" + name + "')";
+                SqlCommand lectura = new SqlCommand(sql, bas.getTomos());
+                int estado = lectura.ExecuteNonQuery();
+                return estado > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+
     }
 
 

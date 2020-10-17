@@ -14,7 +14,7 @@ namespace otello
         {
             Response.Write("<scrip>window.alert('registrece')</script>");
             Response.Redirect("registrar.aspx");
-
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -22,6 +22,7 @@ namespace otello
             sincronizar p = new sincronizar();
             string usuario, contraseña;
             usuario = TextBox1.Text;
+           
             contraseña = TextBox2.Text;
             if (p.buscar(usuario, contraseña))
             {
