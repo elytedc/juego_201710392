@@ -17,10 +17,7 @@
             font-weight: 700;
             background-color: #6600CC;
         }
-
         
-
-
         .auto-style20 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -39,8 +36,6 @@
         }
                 
         
-
-
         .auto-style3 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -54,7 +49,7 @@
             width: 35px;
             height: 35px;
             left: 254px;
-            right: 587px;
+            right: 713px;
             background-color: #000000;
         }
         .auto-style45 {
@@ -638,8 +633,6 @@
         }
         
         
-
-
         .auto-style29 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -993,17 +986,12 @@
             left: 129px;
             background-color: #009D0E;
         }
-
         
-
-
         .auto-style67 {
             height: 788px;
         }
         
         
-
-
         .auto-style71 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -1020,24 +1008,15 @@
             right: 1137px;
             background-color: #009D0E;
         }
-
         
-
-
         .auto-style72 {
             background-color: #FF0000;
         }
-
         
-
-
         .auto-style73 {
             margin-top: 0px;
         }
-
         
-
-
         .auto-style74 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -1055,10 +1034,7 @@
             bottom: 190px;
             left: 323px;
         }
-
         
-
-
         .auto-style75 {
             border: 2px solid #ffffff;
             border-radius: 200px;
@@ -1092,10 +1068,7 @@
             background-color: #000000;
             bottom: 291px;
         }
-
         
-
-
         </style>
 </head>
 <body>

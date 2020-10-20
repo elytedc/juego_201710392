@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Xml;
 using System.Xml.Linq;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Windows.Forms;
-using System.Windows.Controls;
-
 
 namespace otello
-
 {
-    public partial class partidavs : System.Web.UI.Page
-
+    public partial class RETO_INVERSO : System.Web.UI.Page
     {
         public static string[,] ma = new string[10, 10];
         public static string colorito = "";
@@ -24,6 +22,10 @@ namespace otello
         public static string yy = "x";
         public static int b = 0;
         public static int n = 0;
+        public static int tiempoj1 = 0;
+        public static int tiempoj2 = 0;
+        public static int tiempoj1m = 0;
+        public static int tiempoj2m = 0;
 
 
         public object FlatStyle { get; private set; }
@@ -41,10 +43,14 @@ namespace otello
                     mostrar();
                     tabla1();
                     posibles();
+                    Timer1.Enabled = true;
 
                 }
             }
         }
+
+
+
 
 
         public void mostrar()
@@ -552,6 +558,7 @@ namespace otello
 
         public void resultado()
         {
+            Timer1.Enabled = false;
             sincronizar p = new sincronizar();
             int b1 = 0;
             int b2 = 0;
@@ -565,9 +572,9 @@ namespace otello
             }
             if (b1 < b2)
             {
-                Response.Write("<scrip>window.alert('ha Ganado negro')</script>");
-                if (colorlogeado == "negro") { p.insertar_partida("JUGADOR VS INVITADO", "GANADO"); }
-                else { p.insertar_partida("JUGADOR VS INVITADO", "PERDIO"); }
+                Response.Write("<scrip>window.alert('ha Ganado BLANCO')</script>");
+                if (colorlogeado == "negro") { p.insertar_partida("JUGADOR VS INVITADO", "PERDIO"); }
+                else { p.insertar_partida("JUGADOR VS INVITADO", "GANO"); }
 
 
             }
@@ -579,9 +586,9 @@ namespace otello
             }
             if (b1 > b2)
             {
-                Response.Write("<scrip>window.alert('ha Ganado blanco')</script>");
-                if (colorlogeado == "negro") { p.insertar_partida("JUGADOR VS INVITADO", "PERDIO"); }
-                else { p.insertar_partida("JUGADOR VS INVITADO", "GANO"); }
+                Response.Write("<scrip>window.alert('ha Ganado NEGRO')</script>");
+                if (colorlogeado == "negro") { p.insertar_partida("JUGADOR VS INVITADO", "GANO"); }
+                else { p.insertar_partida("JUGADOR VS INVITADO", "PERDIO"); }
             }
 
 
@@ -996,15 +1003,11 @@ namespace otello
         }
 
 
-        public void botones(string fila, string columna, string color)
-        {
-
-
-        }
+    
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void a01_Click(object sender, EventArgs e)
@@ -1092,6 +1095,7 @@ namespace otello
                         {
                             case "color":
                                 colorturno = lectura.ReadString();
+                                colorlogeado= lectura.ReadString();
                                 estado = "falso";
                                 break;
 
@@ -1824,21 +1828,30 @@ namespace otello
             if (colorturno == "blanco")
             {
                 d04.BackColor = System.Drawing.Color.White;
-                recorrer(4, 4, "B");
-                mostrar();
+                ma[4, 4] = "B";
                 colorturno = "negro";
-                tabla1();
-                posibles();
             }
             else
             {
                 d04.BackColor = System.Drawing.Color.Black;
-                recorrer(4, 4, "N");
-                mostrar();
+                ma[4, 4] = "N";
                 colorturno = "blanco";
+               
+            }
+            int w = 0;
+            for (int z = 0; z < 9; z++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (ma[z, y] == "B") { w++; }
+                    if (ma[z, y] == "N") { w++; }
+                }
+            }
+            if (w==4) {
                 tabla1();
                 posibles();
             }
+
         }
 
         protected void d05_Click(object sender, EventArgs e)
@@ -1846,21 +1859,32 @@ namespace otello
             if (colorturno == "blanco")
             {
                 d05.BackColor = System.Drawing.Color.White;
-                recorrer(4, 5, "B");
-                mostrar();
+                ma[4, 5] = "B";
                 colorturno = "negro";
-                tabla1();
-                posibles();
             }
             else
             {
                 d05.BackColor = System.Drawing.Color.Black;
-                recorrer(4, 5, "N");
-                mostrar();
+                ma[4, 5] = "N";
                 colorturno = "blanco";
+                
+            }
+
+            int w = 0;
+            for (int z = 0; z < 9; z++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (ma[z, y] == "B") { w++; }
+                    if (ma[z, y] == "N") { w++; }
+                }
+            }
+            if (w == 4)
+            {
                 tabla1();
                 posibles();
             }
+
         }
 
         protected void d06_Click(object sender, EventArgs e)
@@ -2003,18 +2027,27 @@ namespace otello
             if (colorturno == "blanco")
             {
                 e04.BackColor = System.Drawing.Color.White;
-                recorrer(5, 4, "B");
-                mostrar();
+                ma[5, 4] = "B";
                 colorturno = "negro";
-                tabla1();
-                posibles();
             }
             else
             {
                 e04.BackColor = System.Drawing.Color.Black;
-                recorrer(5, 4, "N");
-                mostrar();
+                ma[5, 4] = "N";
                 colorturno = "blanco";
+            }
+
+            int w = 0;
+            for (int z = 0; z < 9; z++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (ma[z, y] == "B") { w++; }
+                    if (ma[z, y] == "N") { w++; }
+                }
+            }
+            if (w == 4)
+            {
                 tabla1();
                 posibles();
             }
@@ -3385,6 +3418,11 @@ namespace otello
                     ma[z, y] = " ";
                 }
             }
+            tiempoj1 = 0;
+            tiempoj2 = 0;
+            tiempoj2m = 0;
+            tiempoj1m = 0;
+
         }
 
         protected void e05_Click(object sender, EventArgs e)
@@ -3392,94 +3430,81 @@ namespace otello
             if (colorturno == "blanco")
             {
                 e05.BackColor = System.Drawing.Color.White;
-                recorrer(5, 5, "B");
-                mostrar();
+                ma[5, 5] = "B";
                 colorturno = "negro";
-                tabla1();
-                posibles();
             }
             else
             {
                 e05.BackColor = System.Drawing.Color.Black;
-                recorrer(5, 5, "N");
-                mostrar();
+                ma[5, 5] = "N";
                 colorturno = "blanco";
+            }
+
+            int w = 0;
+            for (int z = 0; z < 9; z++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+                    if (ma[z, y] == "B") { w++; }
+                    if (ma[z, y] == "N") { w++; }
+                }
+            }
+            if (w == 4)
+            {
                 tabla1();
                 posibles();
             }
         }
 
-        protected void Button2_Click1(object sender, EventArgs e)
-        {
-            for (int z = 0; z < 9; z++)
-            {
-                for (int y = 0; y < 9; y++)
-                {
-                    ma[z, y] = " ";
-                }
-            }
+       
 
-            ma[4, 4] = "B";
-            ma[5, 4] = "N";
-            ma[4, 5] = "N";
-            tabla(5, 5, "B");
-            for (int x1 = 0; x1 < 9; x1++)
-            {
-                for (int y1 = 0; y1 < 9; y1++)
-                {
-                    if (ma[x1, y1] == " ")
-                    {
-                        yy = "a";
-                    }
-
-                }
-            }
-            posibles();
-
-        }
-
-
-
-        protected void d9_Click1(object sender, EventArgs e)
-        {
-            colorturno = "blanco";
-
-            colorlogeado = "negro";
-            for (int x = 0; x < 9; x++)
-            {
-                for (int y = 0; y < 9; y++)
-                {
-                    if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO" || ma[x, y] == "MA" || ma[x, y] == "ME" || ma[x, y] == "MI" || ma[x, y] == "MO")
-                    {
-                        ma[x, y] = " ";
-                    }
-                    else { }
-                }
-            }
-            mostrar();
-            tabla1();
-            posibles();
-
-        }
-
-        protected void e9_Click(object sender, EventArgs e)
+        protected void Button3_Click(object sender, EventArgs e)
         {
             colorturno = "negro";
             colorlogeado = "blanco";
+            Timer1.Enabled = true;
             for (int x = 0; x < 9; x++)
             {
                 for (int y = 0; y < 9; y++)
                 {
-                    if (ma[x, y] == "PA" || ma[x, y] == "PE" || ma[x, y] == "PI" || ma[x, y] == "PO" || ma[x, y] == "MA" || ma[x, y] == "ME" || ma[x, y] == "MI" || ma[x, y] == "MO")
-                    {
+                    
                         ma[x, y] = " ";
-                    }
-                    else { }
+                   
                 }
             }
-            mostrar();
-            tabla1();
-            posibles();
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            colorturno = "blanco";
+            colorlogeado = "negro";
+
+            Timer1.Enabled = true;
+            for (int x = 0; x < 9; x++)
+            {
+                for (int y = 0; y < 9; y++)
+                {
+
+                    ma[x, y] = " ";
+
+                }
+            }
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            if (colorturno == "negro") {
+                s1.Text = ":" + tiempoj1;
+                if (tiempoj1 == 60) { tiempoj1 = 0; tiempoj1m++; m1.Text = "" + tiempoj1m; }
+                    tiempoj1++;
+            }
+            if (colorturno == "blanco")
+            {
+                s2.Text = ":" + tiempoj2;
+                if (tiempoj2 == 60) { tiempoj2 = 0; tiempoj2m++; m2.Text = "" + tiempoj2m; }
+                tiempoj2++;
+            }
+
         }
     }
 }

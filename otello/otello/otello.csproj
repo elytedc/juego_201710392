@@ -131,6 +131,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="partidasistema.aspx" />
+    <Content Include="RETO_INVERSO.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -233,6 +234,13 @@
     </Compile>
     <Compile Include="registrar.aspx.designer.cs">
       <DependentUpon>registrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RETO_INVERSO.aspx.cs">
+      <DependentUpon>RETO_INVERSO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETO_INVERSO.aspx.designer.cs">
+      <DependentUpon>RETO_INVERSO.aspx</DependentUpon>
     </Compile>
     <Compile Include="sincronizar.cs" />
     <Compile Include="Site.Master.cs">

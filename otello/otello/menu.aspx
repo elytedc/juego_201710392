@@ -36,10 +36,11 @@
     <form id="form1" runat="server" class="auto-style1">
         <div style="height: 226px; margin-top: 0px">
             <strong>
-            <asp:Button ID="Button1" runat="server" BackColor="White" Height="58px" Text="INDIVIDUAL" Width="180px" CssClass="auto-style4" OnClick="Button1_Click" />
-            <asp:Button ID="Button2" runat="server" BackColor="White" Height="58px" Text="VS" Width="180px" CssClass="auto-style4" />
-            <asp:Button ID="Button3" runat="server" BackColor="White" Height="58px" Text="TORNEOS" Width="180px" CssClass="auto-style4" />
-            <asp:Button ID="Button4" runat="server" BackColor="White" Height="58px" Text="REPORTES" Width="180px" CssClass="auto-style4" />
+            <asp:Button ID="Button1" runat="server" BackColor="White" Height="58px" Text="OTHELLO" Width="180px" CssClass="auto-style4" OnClick="Button1_Click" />
+            <asp:Button ID="Button2" runat="server" BackColor="White" Height="58px" Text="RETO INVERSO" Width="223px" CssClass="auto-style4" OnClick="Button2_Click" />
+            <asp:Button ID="Button3" runat="server" BackColor="White" Height="58px" Text="TORNEOS" Width="212px" CssClass="auto-style4" />
+            <br />
+            <br />
             </strong>
         </div>
         <p>

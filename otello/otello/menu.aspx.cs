@@ -13,5 +13,10 @@ namespace otello
         {
             Response.Redirect("partidavs.aspx");
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RETO_INVERSO.aspx");
+        }
     }
 }
