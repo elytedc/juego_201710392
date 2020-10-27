@@ -39,7 +39,7 @@ namespace otello
                 System.Web.HttpPostedFile file = Request.Files["fUpload"];
                 if (file != null && file.ContentLength > 0)
                 {
-                    a10();
+                    a010();
                     mostrar();
                     tabla1();
                     posibles();
@@ -572,7 +572,7 @@ namespace otello
             }
             if (b1 < b2)
             {
-                Response.Write("<scrip>window.alert('ha Ganado BLANCO')</script>");
+                Response.Write("<scrip>window.alert('ha Ganado BLANCO'"+b1 +"  "+b2+")</script>");
                 if (colorlogeado == "negro") { p.insertar_partida("JUGADOR VS INVITADO", "PERDIO"); }
                 else { p.insertar_partida("JUGADOR VS INVITADO", "GANO"); }
 
@@ -580,13 +580,13 @@ namespace otello
             }
             if (b1 == b2)
             {
-                Response.Write("<scrip>window.alert('esto es empate')</script>");
+                Response.Write("<scrip>window.alert('esto es empate'" + b1 + "  " + b2 + ")</script>");
                 if (colorlogeado == "negro") { p.insertar_partida("JUGADOR VS INVITADO", "empate"); }
                 else { p.insertar_partida("JUGADOR VS INVITADO", "empate"); }
             }
             if (b1 > b2)
             {
-                Response.Write("<scrip>window.alert('ha Ganado NEGRO')</script>");
+                Response.Write("<scrip>window.alert('ha Ganado NEGRO'" + b1 + "  " + b2 + ")</script>");
                 if (colorlogeado == "negro") { p.insertar_partida("JUGADOR VS INVITADO", "GANO"); }
                 else { p.insertar_partida("JUGADOR VS INVITADO", "PERDIO"); }
             }
@@ -1057,7 +1057,7 @@ namespace otello
             }
         }
 
-        public void a10()
+        public void a010()
         {
             for (int z = 0; z < 9; z++)
             {
@@ -3506,5 +3506,82 @@ namespace otello
             }
 
         }
+
+
+
+
+        public void tablero()
+        {
+            string p =TextBox1.Text;
+            int n = p;
+            int aa = 1;
+
+            
+            for (int z = 0; z < 20; z++)
+            {
+                a01.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                aa++;
+                a02.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                aa++;
+                a03.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                aa++;
+                a04.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                aa++;
+                a05.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                aa++;
+                a06.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a07.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a08.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a9.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a010.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a11.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a12.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a13.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a14.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a15.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a16.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a17.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a18.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a19.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+                aa++;
+                a20.BackColor = System.Drawing.ColorTranslator.FromHtml("#009E0C");
+                if (n == aa) { return; }
+            }
+            
+
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            tablero(6);
+        }
     }
+
 }

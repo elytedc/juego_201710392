@@ -742,5 +742,18 @@ namespace otello
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button h08;
+        protected global::System.Web.UI.WebControls.Button a9;
+        protected global::System.Web.UI.WebControls.Button a10;
+        protected global::System.Web.UI.WebControls.Button a11;
+        protected global::System.Web.UI.WebControls.Button a12;
+        protected global::System.Web.UI.WebControls.Button a13;
+        protected global::System.Web.UI.WebControls.Button a14;
+        protected global::System.Web.UI.WebControls.Button a15;
+        protected global::System.Web.UI.WebControls.Button a16;
+        protected global::System.Web.UI.WebControls.Button a17;
+        protected global::System.Web.UI.WebControls.Button a18;
+        protected global::System.Web.UI.WebControls.Button a19;
+        protected global::System.Web.UI.WebControls.Button a20;
+        protected global::System.Web.UI.WebControls.Button TextBox1;
     }
 }
