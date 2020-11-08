@@ -5353,7 +5353,7 @@ namespace otello
             if (y == 9) { tablerog(); tableroh(); tableroi(); }
             if (y == 10) { tablerog(); tableroh(); tableroi(); tableroj(); }
             if (y == 11) { tablerog(); tableroh(); tableroi(); tableroj(); tablerok(); }
-            if (y == 12) { tablerog(); tableroh(); tableroi(); tableroj(); tablerok(); tablerol(); }
+            if (y == 12) { tablerog(); tableroh(); tableroi(); tableroj(); tablerok(); tablerol(); }//d
             if (y == 13) { tablerog(); tableroh(); tableroi(); tableroj(); tablerok(); tablerol(); tablerom(); }
             if (y == 14) { tablerog(); tableroh(); tableroi(); tableroj(); tablerok(); tablerol(); tablerom(); tableron(); }
             if (y == 15) { tablerog(); tableroh(); tableroi(); tableroj(); tablerok(); tablerol(); tablerom(); tableron(); tableroñ(); }
